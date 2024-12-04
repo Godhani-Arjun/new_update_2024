@@ -1,0 +1,244 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "zp-product-header-content": {
+      "type": "product-header-content-zipifypages",
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "separator": {
+          "type": "separator",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "text_k6JFir": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Introducing \"The White Range\" – a collection of elegant acrylic plinths, exclusively designed for events. Elevate your space with the timeless sophistication of Plinths New York. Crafted with precision, our white plinths seamlessly blend style and durability. Transform your event with these exquisite pieces that redefine sophistication.<\/p><p>Made out of 4.5mm premium acrylic<\/p>"
+          }
+        },
+        "text_tJkwN8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>15 risers included in this collection<\/p>"
+          }
+        },
+        "separator_y7zc6N": {
+          "type": "separator",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_type": "block",
+            "color_selector_type": "color",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "accordion_UrEDFd": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "none",
+            "title": "<strong> Description <\/strong>",
+            "content": "<p>Introducing \"The White Range\" – a collection of elegant acrylic plinths, exclusively designed for events. Elevate your space with the timeless sophistication of Plinths New York. Crafted with precision, our white plinths seamlessly blend style and durability. Transform your event with these exquisite pieces that redefine sophistication.<\/p><p>Made out of 4.5mm premium acrylic<\/p>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "accordion_MfNYCN": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "none",
+            "title": "<strong>DIMENSIONS (INCHES)<\/strong>",
+            "content": "<p>15 risers included in this collection<\/p><ul><li>2 x 10\" x 10\" x  1\"<\/li><li>2 x 12\" x 12\" x 1\"<\/li><li>1 x 10\" x 10\" x 10\"<\/li><li>1 x 11\" x 11\" x 4\"<\/li><li>1 x 10\" x 10\" x 10\"<\/li><li>1 x 12\" x 12\" x 10\"<\/li><li>1 x 14\" x 14\" x 4\"<\/li><li>1 x 14\" x 14\" x 16\"<\/li><li>1 x 12\" x 12\" x 14\"<\/li><li>1 x 11\" x 11\" x 12\"<\/li><li>1 x 16\" x 14\" x 14\"<\/li><li>1 x 12\" x 12\" x 8\" <\/li><\/ul>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "complementary_products": {
+          "type": "complementary_products",
+          "settings": {
+            "title": "Pairs well with",
+            "products_count": 7,
+            "show_below_gallery": true,
+            "stack_products": false,
+            "show_quick_buy": true
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "separator",
+        "payment_terms",
+        "text_k6JFir",
+        "text_tJkwN8",
+        "separator_y7zc6N",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "accordion_UrEDFd",
+        "accordion_MfNYCN",
+        "complementary_products"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "container_size": "lg",
+        "product_info_size": 36,
+        "show_sticky_add_to_cart": true,
+        "center_basic_info": false,
+        "desktop_media_layout": "grid",
+        "desktop_media_grid_gap": 30,
+        "mobile_controls": "dots",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3
+      }
+    },
+    "1708660713ecd1b22f": {
+      "type": "apps",
+      "blocks": {
+        "reelup_shoppable_videos_reels_reelup_product_slider_HNDwNU": {
+          "type": "shopify:\/\/apps\/reelup-shoppable-videos-reels\/blocks\/reelup-product-slider\/a8ec9e4d-d192-44f7-9c23-595f9ee7dd5b",
+          "settings": {
+            "debugging_script": ""
+          }
+        }
+      },
+      "block_order": [
+        "reelup_shoppable_videos_reels_reelup_product_slider_HNDwNU"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
+      }
+    },
+    "before_after_GLLdRN": {
+      "type": "before-after",
+      "blocks": {
+        "before_h9Hh93": {
+          "type": "before",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify:\/\/shop_images\/Plinth_-_Grand_Collection-17.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Plinth_-_Grand_Collection-17.jpg",
+            "text": "Before",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link"
+          }
+        },
+        "after_96haPP": {
+          "type": "after",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify:\/\/shop_images\/Plinth-GrandCollection-18.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Plinth-GrandCollection-18.jpg",
+            "text": "After",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "before_h9Hh93",
+        "after_96haPP"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "subheading": "",
+        "title": "Transform Any Space",
+        "content": "<p>Host like never before<\/p>",
+        "cursor_direction": "horizontal",
+        "cursor_initial_position": 50,
+        "cursor_background": "#ffffff",
+        "cursor_arrows_color": "#000000"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": true,
+        "recommendations_count": 6,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 0.2,
+        "vertical_spacing_factor": 0.2,
+        "subheading": "",
+        "title": "Best Sellers",
+        "content": ""
+      }
+    },
+    "zp-product-footer-content": {
+      "type": "product-footer-content-zipifypages",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "zp-product-header-content",
+    "main",
+    "1708660713ecd1b22f",
+    "before_after_GLLdRN",
+    "related-products",
+    "zp-product-footer-content"
+  ]
+}

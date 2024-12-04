@@ -1,0 +1,522 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "zp-product-header-content": {
+      "type": "product-header-content-zipifypages",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "rating_yKtkUf": {
+          "type": "rating",
+          "settings": {
+            "show_empty": true,
+            "rating_mode": "count"
+          }
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_type": "block",
+            "color_selector_type": "color",
+            "size_chart_page": ""
+          }
+        },
+        "product_variations_zBaYRg": {
+          "type": "product_variations",
+          "disabled": true,
+          "settings": {
+            "option_name": "",
+            "option_value_metafield": "",
+            "products": [
+
+            ],
+            "color_selector_type": "color"
+          }
+        },
+        "text_9A3tgG": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Make your goods pop with our compact white acrylic riser set. Add the perfect height and depth to your display or setup.  </p>"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": false,
+            "atc_button_background": "#f6e7d3",
+            "atc_button_text_color": "#0d0c0c",
+            "payment_button_background": "#f4eee1",
+            "payment_button_text_color": "#f1d6b0"
+          }
+        },
+        "judge_me_reviews_featured_carousel_4w88gP": {
+          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "maxwidth": 1080
+          }
+        },
+        "complementary_products": {
+          "type": "complementary_products",
+          "disabled": true,
+          "settings": {
+            "title": "Pairs well with",
+            "products_count": 2,
+            "show_below_gallery": true,
+            "stack_products": false,
+            "show_quick_buy": true
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "rating_yKtkUf",
+        "separator",
+        "price",
+        "variant_picker",
+        "product_variations_zBaYRg",
+        "text_9A3tgG",
+        "quantity_selector",
+        "buy_buttons",
+        "judge_me_reviews_featured_carousel_4w88gP",
+        "complementary_products"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "container_size": "lg",
+        "product_info_size": 41,
+        "show_sticky_add_to_cart": false,
+        "center_basic_info": false,
+        "desktop_media_layout": "grid",
+        "desktop_media_grid_gap": 30,
+        "mobile_controls": "dots",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3
+      }
+    },
+    "before_after_AnzWwn": {
+      "type": "before-after",
+      "blocks": {
+        "before_bNJC4U": {
+          "type": "before",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/graze-grid-series-310759.webp",
+            "text": "Before",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link"
+          }
+        },
+        "after_cPxY4N": {
+          "type": "after",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/graze-grid-series-336829.webp",
+            "text": "After",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "before_bNJC4U",
+        "after_cPxY4N"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "subheading": "",
+        "title": "",
+        "content": "<p>Showcase your product benefit by using before/after image comparison.</p>",
+        "cursor_direction": "horizontal",
+        "cursor_initial_position": 50,
+        "cursor_background": "#ffffff",
+        "cursor_arrows_color": "#000000"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "recommendations_count": 10,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "",
+        "title": "Handpicked for Your Taste",
+        "content": ""
+      }
+    },
+    "collection_list_jcgAMH": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_hnnywa": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "",
+            "image": "shopify://shop_images/short-trio-set-231758.jpg",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "View products",
+            "button_link": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_PebJA9": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "",
+            "image": "shopify://shop_images/medium-trio-set-775638.jpg",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "View products",
+            "button_link": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_nkMifY": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "",
+            "image": "shopify://shop_images/medium-trio-set-775638.jpg",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "View products",
+            "button_link": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_hnnywa",
+        "collection_PebJA9",
+        "collection_nkMifY"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image_size": "auto",
+        "show_text_outside": false,
+        "space_items": false,
+        "stack_collections": false,
+        "collections_per_row_desktop": 2,
+        "subheading": "",
+        "title": "Handpicked for Your Taste",
+        "content": ""
+      }
+    },
+    "image_with_text_L4iGbt": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_NVprwe": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_eEBqiM": {
+          "type": "heading",
+          "settings": {
+            "text": "Transform Your Party: Sleek & Modern Product Displays",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_TPbdwe": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Elevate your interior with our cutting-edge product displays, designed to captivate and intrigue. Our collection merges sleek lines with a modern aesthetic, creating spaces that not only attract attention but also celebrate sophistication</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_NVprwe",
+        "heading_eEBqiM",
+        "richtext_TPbdwe"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image": "shopify://shop_images/chaffing-guard-321006.jpg",
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "sm",
+        "remove_vertical_spacing": true
+      }
+    },
+    "image_with_text_wNYffT": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_fi3pQh": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_VdjEAR": {
+          "type": "heading",
+          "settings": {
+            "text": "Experience the perfect blend of style and functionality",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_ccPdcA": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Elevate your gathering with our stylish plinths set for a breathtaking display of gourmet cheeses, charcuterie, fruits, and more, inviting guests to indulge in a feast for both the eyes and the palate.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_fi3pQh",
+        "heading_VdjEAR",
+        "richtext_ccPdcA"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image": "shopify://shop_images/chaffing-guard-345247.jpg",
+        "reveal_on_scroll": true,
+        "image_position": "end",
+        "content_width": "md",
+        "remove_vertical_spacing": true
+      }
+    },
+    "collection_list_FpDDfa": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_8gtb7f": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "",
+            "image": "shopify://shop_images/grand-collection-867982.jpg",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "View products",
+            "button_link": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_iNMBfA": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "",
+            "image": "shopify://shop_images/image00001.jpg",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "",
+            "button_link": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_B9aWgg": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "all-products",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "View products",
+            "button_link": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_rrfEYJ": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "new-arrivals",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "View products",
+            "button_link": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_8gtb7f",
+        "collection_iNMBfA",
+        "collection_B9aWgg",
+        "collection_rrfEYJ"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image_size": "md",
+        "show_text_outside": false,
+        "space_items": true,
+        "stack_collections": false,
+        "collections_per_row_desktop": 4,
+        "subheading": "<strong>Best Seller</strong>",
+        "title": "",
+        "content": ""
+      }
+    },
+    "slideshow_YTpxGL": {
+      "type": "slideshow",
+      "blocks": {
+        "image_73Q3DA": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "subheading": "Tell your story",
+            "title": "Slide 1",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "content_max_width": 780,
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_1_style": "solid",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2) 0%, rgba(4, 4, 4, 0.65) 100%)"
+          }
+        },
+        "image_yqAmRj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1.14.jpg",
+            "subheading": "",
+            "title": "COLLABORATION",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "content_max_width": 780,
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_1_style": "solid",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.65) 100%)"
+          }
+        }
+      },
+      "block_order": [
+        "image_73Q3DA",
+        "image_yqAmRj"
+      ],
+      "settings": {
+        "allow_transparent_header": true,
+        "show_next_section_button": true,
+        "media_size": "auto",
+        "autoplay": true,
+        "autoplay_pause_on_video": true,
+        "cycle_speed": 5,
+        "background": "#000000",
+        "controls_color": "#ffffff"
+      }
+    },
+    "zp-product-footer-content": {
+      "type": "product-footer-content-zipifypages",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "zp-product-header-content",
+    "main",
+    "before_after_AnzWwn",
+    "related-products",
+    "collection_list_jcgAMH",
+    "image_with_text_L4iGbt",
+    "image_with_text_wNYffT",
+    "collection_list_FpDDfa",
+    "slideshow_YTpxGL",
+    "zp-product-footer-content"
+  ]
+}

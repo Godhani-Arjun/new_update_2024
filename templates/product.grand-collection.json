@@ -1,0 +1,173 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "zp-product-header-content": {
+      "type": "product-header-content-zipifypages",
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h1"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "text_YhcGng": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Indulge in opulence with the \"Grand Collection\" plinths from Plinths New York. Meticulously crafted from premium acrylic, these elegant pieces redefine event sophistication. Elevate your decor and create a grand ambiance. Make a statement with this exquisite collection, designed to transform any space into a luxurious showcase.<\/p>"
+          }
+        },
+        "accordion_rnNCYX": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "picto-star",
+            "title": "<strong>DIMENSION (INCHES)<\/strong>",
+            "content": "<p>1. 13\" x 13\" x 2\"<\/p><p>2. 14\" x 14\" x 4\"<\/p><p>3. 14\" x 14\" x 6\" <\/p><p>4. 13\" x 13\" x 6\" <\/p><p>5. 14\" x 14\" x 8\" <\/p><p>6. 14\" x 14\" x 8\"<\/p><p>7. 14\" x 14\" x 14\" <\/p><p>8. 12\" x 12\" x 12\"<\/p><p>9. 13\" x 13\" x 14\"<\/p><p>10. 14\" x 14\" x 14\"<\/p><p>11. 26\" x 12\" x 4\"<\/p><p>12. 28\" x 12\" x 10\"<\/p>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "text_bMdgzF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>12 pieces included in this collection<\/p>"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_type": "block",
+            "color_selector_type": "color",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {
+          }
+        },
+        "complementary_products": {
+          "type": "complementary_products",
+          "settings": {
+            "title": "Pairs well with",
+            "products_count": 2,
+            "show_below_gallery": true,
+            "stack_products": false,
+            "show_quick_buy": true
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "text_YhcGng",
+        "accordion_rnNCYX",
+        "text_bMdgzF",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "payment_terms",
+        "complementary_products"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "container_size": "lg",
+        "product_info_size": 35,
+        "show_sticky_add_to_cart": true,
+        "center_basic_info": false,
+        "desktop_media_layout": "grid",
+        "desktop_media_grid_gap": 30,
+        "mobile_controls": "dots",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3
+      }
+    },
+    "17086606179a165acd": {
+      "type": "apps",
+      "blocks": {
+        "reelup_shoppable_videos_reels_reelup_product_slider_7A8qGr": {
+          "type": "shopify:\/\/apps\/reelup-shoppable-videos-reels\/blocks\/reelup-product-slider\/a8ec9e4d-d192-44f7-9c23-595f9ee7dd5b",
+          "settings": {
+            "debugging_script": ""
+          }
+        }
+      },
+      "block_order": [
+        "reelup_shoppable_videos_reels_reelup_product_slider_7A8qGr"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "recommendations_count": 10,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "",
+        "title": "Related products",
+        "content": ""
+      }
+    },
+    "zp-product-footer-content": {
+      "type": "product-footer-content-zipifypages",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "zp-product-header-content",
+    "main",
+    "17086606179a165acd",
+    "related-products",
+    "zp-product-footer-content"
+  ]
+}

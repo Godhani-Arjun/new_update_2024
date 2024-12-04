@@ -1,189 +1,215 @@
-{%- capture relatedProducts -%}
+<product-recommendations class="block" product="{{ product.id }}" limit="{{ section.settings.recommendations_count }}" intent="related">
+  {%- if recommendations.performed and recommendations.products_count > 0 -%}
+    <style>
 
-{% if section.settings.show_related_products == true %}
+      .product-data a.button {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: #000;
+        color: #fff;
+        border: 0;
+        border-radius: 0;
+        margin: auto;
+        max-width: 85%;
+        left: 0;
+        right: 0;
+        bottom: 30px;
+        z-index: 3;
+        opacity: 0;
+        font-size: 18px;
+        line-height: 23px;
+        letter-spacing: 1px;
+        padding: 16.5px 28px;
+        transition: opacity 0.5s ease-in;
+        text-transform: uppercase;
+        gap:0;
+        font-weight: 700;
+    }
 
-{% case section.settings.grid %}
-  {% when 3 %}{%- assign grid_ds = 'large-up--one-third' -%}
-  {% when 4 %}{%- assign grid_ds = 'large-up--one-quarter' -%}
-  {% when 5 %}{%- assign grid_ds = 'large--one-quarter widescreen--one-fifth' -%}
-  {% when 6 %}{%- assign grid_ds = 'large--one-fifth widescreen--one-sixth' -%}
-  {% when 7 %}{%- assign grid_ds = 'large--one-fifth widescreen--one-seventh' -%}
-{% endcase %}
+    @media (max-width: 699px){
+      .product-data a.button {
+        opacity: 0 !important;
+        height: 100%;
+      }
+    }
 
-{% case section.settings.tablet-grid %}
-  {% when 2 %}{%- assign grid_tb = 'medium--one-half' -%}
-  {% when 3 %}{%- assign grid_tb = 'medium--one-third' -%}
-  {% when 4 %}{%- assign grid_tb = 'medium--one-quarter' -%}
-  {% when 5 %}{%- assign grid_tb = 'medium--one-fifth' -%}
-{% endcase %}
+      #shopify-section-{{ section.id }} {
+        --product-list-items-per-row: {{ section.settings.products_per_row_mobile | times: 1 }};
+        --product-list-horizontal-spacing-factor: {{ section.settings.horizontal_spacing_factor }};
+        --product-list-vertical-spacing-factor: {{ section.settings.vertical_spacing_factor }};
+      }
 
-{% case section.settings.mobile-grid %}
-  {% when 1 %}{%- assign grid_mb = 'small--one-whole' -%}
-  {% when 2 %}{%- assign grid_mb = 'small--one-half' -%}
-  {% when 3 %}{%- assign grid_mb = 'small--one-third' -%}
-{% endcase %}
+      @media screen and (min-width: 700px) {
+        #shopify-section-{{ section.id }} {
+          --product-list-items-per-row: {{ section.settings.products_per_row_desktop }};
+        }
+      }
+    </style>
 
-<div class="related-product" id="{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="carousel">
-  <div class="{% if settings.product_latyout != "style6" %}page-width{% if settings.product_fullwidth %} fullwidth{% endif %}{% endif %}">
-    {% assign number_of_related_products_per_row = section.settings.related_grid_num %}
-	{% assign number_of_rows = section.settings.related_total_product_to_show | plus:1 %}
-	
-	{% assign same_vendor = false %}
-	{% assign same_type = false %}
-	
-	{% assign exclusions = 'frontpage,all' | split: ',' %}
-	
-	{% if product.metafields.c_f['Related Products'] %}
-	{% assign collection = collections[product.metafields.c_f['Related Products']] %}
-	{% endif %}
-	
-	{% assign found_a_collection = false %}
-    {% if collection and collection.all_products_count > 1 %}
-        {% unless exclusions contains collection.handle %}
-        {% assign found_a_collection = true %}
-        {% endunless %}
-      {% endif %}
-      {% unless found_a_collection %}
-        {% for c in product.collections limit: number_of_rows %}
-          {% unless exclusions contains c.handle or c.all_products_count < 2 %}
-          {% assign found_a_collection = true %}
-          {% assign collection = c %}
-          {% break %}
-          {% endunless %}
-        {% endfor %}
-      {% endunless %}
+    {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
 
-	{% if found_a_collection %}
-      {% assign current_product = product %}
-      {%- capture related_items -%}
-    	{%- if settings.product_latyout == "style6" -%}
-          <div id="productSlider-{{ section.id }}" class="grid grid--uniform collection-columns">
-            {% for product in collection.products limit : number_of_rows %}
-              {% unless product.handle == current_product.handle %}
-                  {% unless same_vendor and current_product.vendor != product.vendor %}
-                      {% unless same_type and current_product.type != product.type %}
-                          <div class="grid__item medium--one-half">{% include 'product-card-grid-columns' %}</div>
-                      {% endunless %}
-                  {% endunless %}
-              {% endunless %}
-            {% endfor %}
-          </div>
-    	{%- else -%}
-    	  <div id="productSlider-{{ section.id }}" class="grid-products carousel" {% if settings.product_latyout != "style6" %}data-slick='{"slidesToShow": {{ section.settings.grid }},"slidesToScroll": 1, {%- if settings.rtl -%}"rtl": true,{%- endif -%} "infinite": true, "autoplay":{{section.settings.related_products_autoplay}}, "autoplaySpeed": {{section.settings.autoplay_speed}}, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": {{ section.settings.tablet-grid }} }},{"breakpoint": 767,"settings":{"slidesToShow":{{ section.settings.mobile-grid }} }} ]}'{% endif %}>
-            {% for product in collection.products limit : number_of_rows %}
-              {% unless product.handle == current_product.handle %}
-                  {% unless same_vendor and current_product.vendor != product.vendor %}
-                      {% unless same_type and current_product.type != product.type %}
-                          <div class="grid__item {{ grid_mb }} {{ grid_tb }} {{grid_ds}}">{% include 'product-card-grid', grid_image_width: image_size %}</div>
-                      {% endunless %}
-                  {% endunless %}
-              {% endunless %}
-            {% endfor %}
-          </div>
-    	{%- endif -%}
-      {%- endcapture -%}
+    <div class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
+      <div class="container">
+        <div class="section-stack">
+          {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.title, content: section.settings.content -%}
 
-      {% assign related_items = related_items | trim %}
+          {%- capture product_list -%}
+            {%- for product in recommendations.products -%}
+              {%- render 'product-card', product: product, reveal: settings.stagger_products_apparition, hide_product_information: section.settings.hide_product_information -%}
+            {%- endfor -%}
+          {%- endcapture -%}
 
-      {% unless related_items == blank %}
-        {% unless section.settings.related_title == blank %}
-           <div class="sec-ttl {{ settings.title_align}}">
-              <h3 class="h3">{{ section.settings.related_title | escape }}</h3>
-                 {%- if section.settings.related_sub_title != blank -%}<span>{{section.settings.related_sub_title}}</span>{%- endif -%}        
-              </div> 
-       	{% endunless %}
-    	<div id="products-{{ section.id }}">{{ related_items }}</div>
-      {% endunless %}  
-	{% endif %} 
-  </div>
-</div>
-{% endif %}
-{%- endcapture -%}
-{{ relatedProducts | strip_newlines | remove: "  " | remove: "	" }}
+          {%- if section.settings.stack_products -%}
+            <product-list class="product-list {% if section.settings.hide_product_information %}product-list--compact{% endif %} justify-center">
+              {{- product_list -}}
+            </product-list>
+          {%- else -%}
+            {%- assign carousel_id = 'carousel-' | append: section.id -%}
+
+            <product-list class="floating-controls-container floating-controls-container--inside floating-controls-container--on-hover">
+              <scroll-carousel id="{{ carousel_id }}" group-cells allow-drag class="product-list {% if section.settings.hide_product_information %}product-list--compact{% endif %} product-list--carousel scroll-area bleed md:unbleed">
+                {{- product_list -}}
+              </scroll-carousel>
+
+              <button is="carousel-prev-button" type="button" class="prev-next-button prev-next-button--prev circle-button hover:animate-icon-inline" aria-controls="{{ carousel_id }}" disabled>
+                <span class="sr-only">{{ 'general.accessibility.previous' | t }}</span>
+                {%- render 'icon' with 'arrow-left', direction_aware: true -%}
+              </button>
+
+              <button is="carousel-next-button" type="button" class="prev-next-button prev-next-button--next circle-button hover:animate-icon-inline" aria-controls="{{ carousel_id }}">
+                <span class="sr-only">{{ 'general.accessibility.next' | t }}</span>
+                {%- render 'icon' with 'arrow-right', direction_aware: true -%}
+              </button>
+            </product-list>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+</product-recommendations>
 
 {% schema %}
-  {
-    "name": "Related Products",
-    "settings": [
-		{
-        "type": "checkbox",
-        "id": "show_related_products",
-        "label": "Show Related Products",
-        "default": true
-      },
-	 {
-        "type": "checkbox",
-        "id": "related_products_autoplay",
-        "label": "Carousel Autoplay",
-        "default": false
-      },
 {
-        "type": "select",
-        "id": "autoplay_speed",
-        "label": "Carousel Autoplay Speed",
-        "options": [
-          { "value": "3000", "label": "3 seconds" },
-          { "value": "4000", "label": "4 seconds" },
-          { "value": "5000", "label": "5 seconds" },
-          { "value": "6000", "label": "6 seconds" },
-          { "value": "7000", "label": "7 seconds" },
-          { "value": "8000", "label": "8 seconds" },
-          { "value": "9000", "label": "9 seconds" },
-          { "value": "10000", "label": "10 seconds" },
-		  { "value": "12000", "label": "12 seconds" },
-		  { "value": "15000", "label": "15 seconds" }
-        ],
-        "default": "3000"
-      },
- 	 {
-        "id": "related_title",
-        "type": "text",
-        "label": "Section Title",
-        "default": "Related Products"
-      },
- 	  {
-        "id": "related_sub_title",
-        "type": "text",
-        "label": "Section Sub title",
-        "default": "You can stop autoplay, increase/decrease aniamtion speed and number of grid to show and products from store admin."
-      },
-      {
-        "type": "paragraph",
-        "content": "Products Per Row"
-      },
-      {
-        "type": "range",
-        "id": "grid",
-        "label": "Desktop",
-        "default": 4,
-        "min": 2,
-        "max": 7,
-        "step": 1
-      },
-      {
-        "type": "range",
-        "id": "tablet-grid",
-        "label": "Tablet",
-        "default": 3,
-        "min": 2,
-        "max": 5,
-        "step": 1
-      },
-      {
-        "type": "range",
-        "id": "mobile-grid",
-        "label": "Mobile",
-        "default": 2,
-        "min": 1,
-        "max": 3,
-        "step": 1
-      },
-      {
-        "type": "text",
-        "id": "related_total_product_to_show",
-        "label": "Number of Products to Show",
-        "default": "8"        
-      }
-	]
-  }
+  "name": "t:sections.related_products.name",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "class": "shopify-section--related-products",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.related_products.info"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:global.colors.scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "separate_section_with_border",
+      "label": "t:global.section.separate_section_with_border",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_product_information",
+      "label": "t:global.product_list.hide_product_information",
+      "info": "t:global.product_list.hide_product_information_info"
+    },
+    {
+      "type": "header",
+      "content": "t:global.product_list.product_list_category"
+    },
+    {
+      "type": "checkbox",
+      "id": "stack_products",
+      "label": "t:global.product_list.stack_products",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "recommendations_count",
+      "min": 2,
+      "max": 10,
+      "label": "t:sections.related_products.recommendations_count",
+      "default": 10
+    },
+    {
+      "type": "select",
+      "id": "products_per_row_mobile",
+      "label": "t:global.product_list.products_per_row_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row_desktop",
+      "min": 2,
+      "max": 6,
+      "label": "t:global.product_list.products_per_row_desktop",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "t:global.product_list.spacing_category",
+      "info": "t:global.product_list.spacing_category_info"
+    },
+    {
+      "type": "range",
+      "min": 0.2,
+      "max": 2,
+      "step": 0.1,
+      "id": "horizontal_spacing_factor",
+      "label": "t:global.product_list.horizontal_spacing_factor",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "min": 0.2,
+      "max": 2,
+      "step": 0.1,
+      "id": "vertical_spacing_factor",
+      "label": "t:global.product_list.vertical_spacing_factor",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "t:global.section.header_category"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "t:global.text.subheading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "t:global.text.heading",
+      "default": "Related products"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "t:global.text.content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.related_products.presets.related_products.name"
+    }
+  ]
+}
 {% endschema %}

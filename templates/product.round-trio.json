@@ -1,0 +1,214 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "zp-product-header-content": {
+      "type": "product-header-content-zipifypages",
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "settings": {
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "text_AgYxCE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Introducing the exquisite Round Trio, a set of elegant acrylic plinths designed for elevating your events to new heights. Crafted with precision in New York, these plinths add a touch of sophistication to any occasion. Elevate your displays with the Round Trio, a must-have for creating a memorable and stylish ambiance.<\/p><p>Made out of premium quality 4.5mm acrylic<\/p>"
+          }
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "collapse_content": false,
+            "show_below_gallery": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_type": "block",
+            "color_selector_type": "color",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {
+          }
+        },
+        "accordion_HkbatL": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "picto-star",
+            "title": "<strong>DIMENSION FOR SKINNY SHORT<\/strong>",
+            "content": "<p><strong>(inches)<\/strong><\/p><p>1. 9\" X 3\" <\/p><p>2. 9.8\" X 4.7\" <\/p><p>3. 11\" x 6\" <\/p>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "accordion_axcGfc": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "picto-star",
+            "title": "<strong>DIMENSION FOR MEDIUM SHORT<\/strong>",
+            "content": "<p><strong>(inches)<\/strong><\/p><p>1. 11\" x 3\" <\/p><p>2. 12\" x 8\"<\/p><p>3. 14\" x 6\"<\/p>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "accordion_WwyBXY": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "picto-star",
+            "title": "<strong>DIMENSION FOR WIDE SHORT<\/strong>",
+            "content": "<p><strong>(inches)<\/strong><\/p><p>1. 14\" x 3\" <\/p><p>2. 14\" x 5\" <\/p><p>3. 14\" x 6\"<\/p>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "accordion_q8UkzD": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "picto-star",
+            "title": "<strong>DIMENSION FOR TALL SKINNY<\/strong>",
+            "content": "<p><strong>(inches)<\/strong><\/p><p>1. 11\" x 8\"<\/p><p>2. 11\" x 10\" <\/p><p>3. 12\" x 12\"<\/p>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "accordion_6iQji6": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "picto-star",
+            "title": "<strong>DIMENSION FOR TALL WIDE <\/strong>",
+            "content": "<p><strong>(inches)<\/strong><\/p><p>1. 12\" x 8\" <\/p><p>2. 14\" x 10\"<\/p><p>3. 16\" x 12\" <\/p>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "complementary_products": {
+          "type": "complementary_products",
+          "settings": {
+            "title": "Pairs well with",
+            "products_count": 2,
+            "show_below_gallery": true,
+            "stack_products": false,
+            "show_quick_buy": true
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "text_AgYxCE",
+        "separator",
+        "description",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "payment_terms",
+        "accordion_HkbatL",
+        "accordion_axcGfc",
+        "accordion_WwyBXY",
+        "accordion_q8UkzD",
+        "accordion_6iQji6",
+        "complementary_products"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "container_size": "lg",
+        "product_info_size": 35,
+        "show_sticky_add_to_cart": true,
+        "center_basic_info": false,
+        "desktop_media_layout": "grid",
+        "desktop_media_grid_gap": 30,
+        "mobile_controls": "dots",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "recommendations_count": 10,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "",
+        "title": "Related products",
+        "content": ""
+      }
+    },
+    "zp-product-footer-content": {
+      "type": "product-footer-content-zipifypages",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "zp-product-header-content",
+    "main",
+    "related-products",
+    "zp-product-footer-content"
+  ]
+}

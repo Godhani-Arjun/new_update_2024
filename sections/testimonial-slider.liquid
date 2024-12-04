@@ -1,0 +1,388 @@
+<div class="testimonial-section pd-top">
+  {% if section.settings.heading != blank %}
+    <h2 class="testimonial-heading mobile-heading">{{ section.settings.heading }}</h2>
+  {% endif %}
+  <div class="testimonial-slider">
+    {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        <div class="testimonial-slide">
+          <div class="testimonial-container">
+            <div class="testimonial-images">
+              {% if block.settings.image != blank %}
+                <img
+                  src="{{ block.settings.image | img_url: '701x419' }}"
+                  alt="Image"
+                  class="main-image"
+                  height="419"
+                  width="701"
+                >
+              {% endif %}
+              {% if block.settings.profile_image != blank %}
+                <img
+                  src="{{ block.settings.profile_image | img_url: '163x' }}"
+                  alt="Profile Image"
+                  class="profile-image"
+                  height=""
+                  width="163"
+                >
+              {% endif %}
+            </div>
+            <div class="testimonial-content">
+              {% if section.settings.heading != blank %}
+                <h2 class="testimonial-heading">{{ section.settings.heading }}</h2>
+              {% endif %}
+              <div class="review-content">
+                {% render 'quote' %}
+                {% if block.settings.review != blank %}
+                  <div class="review">{{ block.settings.review }}</div>
+                {% endif %}
+                <div class="author_wrapper">
+                  <div class="mobile_author">
+                    {% if block.settings.profile_image != blank %}
+                      <img
+                        src="{{ block.settings.profile_image | img_url: '163x' }}"
+                        alt="Profile Image"
+                        class="profile-image"
+                        height=""
+                        width="163"
+                      >
+                    {% endif %}
+                  </div>
+                  <div class="content_wrpper">
+                    {% if block.settings['review-author'] != blank %}
+                      <div class="review-author">{{ block.settings['review-author'] }}</div>
+                    {% endif %}
+                    {% if block.settings['review-tag'] != blank %}
+                      <div class="review-tag">{{ block.settings['review-tag'] }}</div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              <div class="slider-nav">
+                <button class="prev-slide">{% render 'left-arrow' %}</button>
+                <button class="next-slide">{% render 'right-arrow' %}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('.testimonial-slider').slick({
+      infinite: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: false,
+      dots: false,
+      arrows: true,
+      fade: true,
+      cssEase: 'linear',
+      prevArrow: $('.prev-slide'),
+      nextArrow: $('.next-slide'),
+    });
+  });
+</script>
+
+<style>
+  .testimonial-section {
+    text-align: center;
+    max-width: 100%;
+    margin: auto;
+    padding-left: 57px;
+    padding-right: 57px;
+    position: relative;
+  }
+
+  .testimonial-heading {
+    font-family: 'Futura Medium BT';
+    margin-bottom: 30px;
+    font-weight: 400;
+  }
+  .testimonial-section .mobile-heading {
+    display: none;
+  }
+  .testimonial-slider {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+  }
+
+  .testimonial-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .testimonial-images {
+    width: 100%;
+    max-width: 44.7%;
+    position: relative;
+  }
+
+  .main-image {
+    width: 100%;
+    height: auto;
+    padding-right: 99px;
+    aspect-ratio: 1 / 0.524;
+    object-fit: cover;
+  }
+
+  .profile-image {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translate(0%, -50%);
+    border: 10px solid white;
+  }
+
+  .testimonial-content {
+    padding-left: 93px;
+    max-width: 55.3%;
+    text-align: left;
+    width: 100%;
+  }
+  .review-content svg {
+    width: 51px;
+    height: 34px;
+  }
+  .review-content {
+    margin-top: 10px;
+  }
+
+  .review-author {
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: 700;
+    margin-top: 30px;
+    color: #2b2b2b;
+    font-family: 'Roboto', sans-serif;
+  }
+  .review p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 25.6px;
+    letter-spacing: 1px !important;
+  }
+
+  .review-tag {
+    color: #2b2b2b;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18.2px;
+    padding-top: 10px;
+    display: inline-block;
+  }
+
+  .slider-nav {
+    padding-top: 80px;
+  }
+
+  .prev-slide,
+  .next-slide {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px 10px 0;
+  }
+  .slick-disabled svg path {
+    fill: #dedede;
+  }
+  .review {
+    margin-top: 20px;
+  }
+  .testimonial-container .author_wrapper .mobile_author {
+    display: none;
+  }
+  .testimonial-container .testimonial-content .next-slide {
+    padding-top: 0;
+    padding-right: 0;
+  }
+
+  .testimonial-container .testimonial-content .prev-slide {
+    padding-top: 0;
+    padding-left: 0;
+  }
+  .testimonial-container .testimonial-content .prev-slide svg,
+  .testimonial-container .testimonial-content .next-slide svg {
+    width: 40px;
+  }
+  @media (min-width: 2500px) {
+    .testimonial-section {
+      max-width: 1920px;
+      margin: 0 auto;
+    }
+  }
+  @media (max-width: 1440px) {
+    .testimonial-heading {
+      font-size: 28px !important;
+      line-height: 40px !important;
+      margin-bottom: 20px !important;
+    }
+    .testimonial-content {
+      padding-left: 30px;
+      max-width: 50%;
+    }
+    .testimonial-images {
+      max-width: 50%;
+    }
+  }
+  @media (max-width: 989px) {
+    .testimonial-container {
+      flex-direction: column;
+    }
+    .testimonial-container .testimonial-images,
+    .testimonial-container .testimonial-content {
+      max-width: 100%;
+    }
+    .testimonial-section {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .testimonial-content {
+      padding: 0 20px;
+    }
+    .testimonial-images .main-image {
+      padding: 0;
+    }
+    .testimonial-images .profile-image,
+    .testimonial-content .testimonial-heading {
+      display: none;
+    }
+    .testimonial-section .mobile-heading,
+    .testimonial-container .author_wrapper .mobile_author {
+      display: block;
+    }
+    .testimonial-container .author_wrapper .mobile_author .profile-image {
+      border: none;
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+      max-width: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .testimonial-section .slider-nav {
+      padding-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 50px;
+    }
+    .testimonial-section .review-author {
+      margin-top: 0;
+    }
+    .testimonial-section .author_wrapper {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .testimonial-section .content_wrpper {
+      margin-left: 10px;
+    }
+    .testimonial-section {
+      padding-top: 50px;
+    }
+  }
+
+  @media (max-width: 749px) {
+    .testimonial-section .mobile-heading {
+      font-size: 24px !important;
+      line-height: 31px !important;
+    }
+    .review-content svg {
+      max-width: 30px;
+      max-height: 20px;
+    }
+    .review-content .review {
+      margin-top: 10px;
+    }
+    .review-content .review p {
+      font-size: 12px;
+      line-height: 19.2px;
+    }
+    .testimonial-container .slider-nav .prev-slide,
+    .testimonial-container .slider-nav .next-slide {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+  @media (max-width: 576px) {
+    .testimonial-container .author_wrapper .mobile_author .profile-image {
+      max-width: 40px;
+    }
+    .testimonial-container .author_wrapper .review-tag {
+      font-size: 12px;
+      line-height: 19.2px;
+      padding-top: 3px;
+    }
+    .testimonial-container .slider-nav svg {
+      max-width: 19px;
+      height: 14px;
+    }
+    .testimonial-images .main-image {
+      min-height: 233px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Testimonial review slider",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Review column",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Select Image"
+        },
+        {
+          "id": "profile_image",
+          "type": "image_picker",
+          "label": "Select Profile Image"
+        },
+        {
+          "id": "review",
+          "type": "richtext",
+          "label": "Review"
+        },
+        {
+          "id": "review-author",
+          "type": "richtext",
+          "label": "Review author"
+        },
+        {
+          "id": "review-tag",
+          "type": "text",
+          "label": "Reviewer Tag"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial review slider"
+    }
+  ]
+}
+{% endschema %}

@@ -1,375 +1,236 @@
-{%- capture collectionBanner -%}
-<div class="content-indent{% if section.settings.hide_mobile %} small--hide{% endif %} {{ section.settings.top-offeset}}">
-  <div class="collection-banners sec-{{ section.id}}{% unless section.settings.section_width %} page-width{% else %} fullwidth-{{section.id}}{% endunless %}{% if section.settings.snow_effect %} falling-snow{% endif %}{% if section.settings.snow_style == "style2" %} style2{% else %} style1{% endif %}" id="{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="masonary">
-   
-    {%- if section.settings.title != blank or section.settings.subtitle != blank -%}
-    <div class="sec-ttl {{ settings.title_align}} wow fadeIn">
-      <h3 class="h3">{{ section.settings.title }}</h3>
-      {%- if section.settings.subtitle != blank -%}<span>{{section.settings.subtitle}}</span>{%- endif -%}
-    </div>
-    {% endif %}  
-    
-      <div class="grid grid-mr-{{ section.settings.grid-spacing}} grid-masonary{% if section.settings.disable_zoom %} no-zoom{% endif %}">            
-        <div class="grid-sizer-{{section.id}} col-{{section.settings.grid-spacing-col}}"></div>
-        {% for block in section.blocks limit: section.blocks.size %}      
-        	{% case block.settings.width %}
-              {% when '20%' %}{%- assign block_width = 'medium-up--one-fifth' -%}{%- assign image_size = '150,350,550,750' -%}
-              {% when '25%' %}{%- assign block_width = 'medium-up--one-quarter' -%}{%- assign image_size = '150,350,550,750' -%}
-              {% when '33%' %}{%- assign block_width = 'medium-up--one-third' -%}{%- assign image_size = '150,350,550,750' -%}
-              {% when '40%' %}{%- assign block_width = 'medium-up--two-fifths' -%}{%- assign image_size = '150,350,550,750' -%}
-              {% when '50%' %}{%- assign block_width = 'medium-up--one-half' -%}{%- assign image_size = '150,350,550,750,950' -%}
-              {% when '60%' %}{%- assign block_width = 'medium-up--tree-fifths' -%}{%- assign image_size = '550,750,950,1200,1500' -%}
-              {% when '66%' %}{%- assign block_width = 'medium-up--two-thirds' -%}{%- assign image_size = '550,750,950,1200,1500' -%}
-              {% when '75%' %}{%- assign block_width = 'medium-up--three-quarters' -%}{%- assign image_size = '550,750,950,1200,1500,1800' -%}
-              {% when '80%' %}{%- assign block_width = 'medium-up--four-fifths' -%}{%- assign image_size = '550,750,950,1200,1500,1800' -%}
-              {% when '100%' %}{%- assign block_width = 'one-whole' -%}
-            {% endcase %}
-        {% assign product_box = forloop.index | minus:1 %}
-        {% assign delay_time = 50 | times : product_box %}      		
-        <div class="grid__item ms-item {{ block_width }} pd-mb-{{section.settings.grid-spacing-mbl}} pd-{{ section.settings.grid-spacing}} wow fadeInUp" {{ block.shopify_attributes }} data-wow-delay="{{delay_time}}ms">
-          {%- assign collection = collections[block.settings.collection] -%}
-          {% include 'collection-grid-item', sizes: image_size %}
-        </div>
-        {% endfor %}
-      </div>
-    {% if section.blocks.size == 0 %}{% include 'no-blocks' %}{% endif %}
-  </div>
-</div>
-<style>
-  .collection-banners.sec-{{ section.id}} .details { background-color:{{section.settings.box_bg}}; color:{{section.settings.box_txt}}; }
-  .collection-banners.sec-{{ section.id}} .details h3 {color:{{section.settings.box_txt}}; }
-  {% if section.settings.section_width %}
-  @media only screen and (min-width: 1025px) {
-    .fullwidth-{{section.id}} { padding-left:{{ section.settings.pad-desk}}px; padding-right:{{ section.settings.pad-desk}}px; }
-  } 
-  @media only screen and (max-width: 1024px) {
-    .fullwidth-{{section.id}} { padding-left:{{ section.settings.pad-ipad}}px; padding-right:{{ section.settings.pad-ipad}}px; }
-  } 
-  @media only screen and (max-width: 767px) {
-    .fullwidth-{{section.id}} { padding-left:{{ section.settings.pad-mbl}}px; padding-right:{{ section.settings.pad-mbl}}px; }
-  }
-  {% endif %}
-  .collection-banners.fullwidth-{{section.id}} .grid-mr-{{ section.settings.grid-spacing}} { margin:0; }
-</style>
+{%- if section.settings.show_image == false or collection.image == blank and section.settings.image == blank -%}
+  {%- assign show_image = false -%}
+{%- else -%}
+  {%- assign show_image = true -%}
+{%- endif -%}
+
+{%- capture collection_breadcrumb -%}
+  {%- if section.settings.show_breadcrumb -%}
+    <nav class="breadcrumb breadcrumb--floating" aria-label="{{ 'general.breadcrumb.label' | t | escape }}">
+      <ol class="breadcrumb__list unstyled-list">
+        <li class="breadcrumb__list-item">
+          <a href="{{ routes.root_url }}" class="smallcaps {% unless show_image %}link-faded{% endunless %}">{{ 'general.breadcrumb.home' | t }}</a>
+        </li>
+
+        <li class="breadcrumb__list-item">
+          <a href="{{ routes.all_products_collection_url }}" class="smallcaps {% unless show_image %}link-faded{% endunless %}">{{ 'general.breadcrumb.shop' | t }}</a>
+        </li>
+
+        <li class="breadcrumb__list-item">
+          <a href="{{ collection.url }}" aria-current="page" class="smallcaps {% unless show_image %}link-faded{% endunless %}">{{ collection.title }}</a>
+        </li>
+      </ol>
+    </nav>
+  {%- endif -%}
 {%- endcapture -%}
-{{collectionBanner | strip_newlines | remove: "  " | remove: "	" }}
+
+{%- capture collection_content -%}
+  {%- if section.settings.show_collection_title -%}
+    <h1 class="h1">{{ collection.title }}</h1>
+  {%- endif -%}
+
+  {%- if section.settings.show_collection_description -%}
+    <div class="collection-description">
+      {{- collection.description -}}
+    </div>
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- if show_image -%}
+  <style>
+    #shopify-section-{{ section.id }} {
+      --content-over-media-overlay: {{ section.settings.overlay_color.rgb }} / {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+      --content-over-media-content-max-width: var(--container-{{ section.settings.content_width }}-max-width);
+    }
+  </style>
+
+  <collection-banner {% if section.settings.reveal %}reveal-on-scroll="true"{% endif %} class="collection-banner color-scheme color-scheme--{{ section.settings.color_scheme.id }}" {% if section.settings.allow_transparent_header %}allow-transparent-header{% endif %}>
+    {%- unless section.settings.allow_transparent_header -%}
+      {{- collection_breadcrumb -}}
+    {%- endunless -%}
+
+    <div class="content-over-media content-over-media--{{ section.settings.image_size }}">
+      <picture>
+        {%- if section.settings.enable_parallax -%}
+          {%- assign is_attribute = 'image-parallax' -%}
+        {%- endif -%}
+
+        {%- if section.settings.mobile_image != blank -%}
+          <source
+              media="(max-width: 699px)"
+              srcset="{{ section.settings.mobile_image | image_url: width: '400x' }} 400w, {{ section.settings.mobile_image | image_url: width: '600x' }} 600w, {{ section.settings.mobile_image | image_url: width: '800x' }} 800w, {{ section.settings.mobile_image | image_url: width: '1000x' }} 1000w"
+              width="{{ section.settings.mobile_image.width }}"
+              height="{{ section.settings.mobile_image.height }}"
+          >
+        {%- endif -%}
+
+        {%- assign image = section.settings.image | default: collection.image -%}
+        {{- image | image_url: width: image.width | image_tag: is: is_attribute, widths: '300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200' -}}
+      </picture>
+
+      <div class="prose text-center">
+        {{ collection_content }}
+      </div>
+    </div>
+  </collection-banner>
+{%- elsif collection_content != blank -%}
+  <div class="relative section-spacing section-spacing--tight">
+    <div class="container container--{{ section.settings.content_width }}">
+      {{- collection_breadcrumb -}}
+
+      <div class="prose text-center">
+        {{- collection_content -}}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
 
 {% schema %}
-  {
-    "name": "Collection Banner",
-    "class": "index-section",
-    "max_blocks": 15,
-    "settings": [	
-      {
-        "type": "textarea",
-        "id": "title",
-        "label": "Heading",
-        "default": "Collection Banner",
-		"info":"Use <strong>text here</strong> to make headings bold"
-      },
-      {
-        "type": "textarea",
-        "id": "subtitle",
-        "label": "Sub Heading",
-        "default": "Describe your products, collection, content etc..."
-      }, 	  	             
-	  {
-        "type": "header",
-        "content": "Appearance"
-      },
-     {
-		 "type": "paragraph",
-		 "content":"[Lots of grid style possible with this section](https://www.adornthemes.com/different-collection-banner-style/)"
-     },	 
-	  {
-        "type": "paragraph",      
-        "content": "Section==="
-      },	 
-	  {
-            "type": "select",
-            "id": "top-offeset",
-            "label": "Top OffSet",
-            "default": "default",
-            "options": [
-              {
-                "value": "default",
-                "label": "Default"
-              },
-              {
-                "value": "small",
-                "label": "Small"
-              },
-			  {
-                "value": "none",
-                "label": "None"
-              }
-			]
-        }, 
-		 {
-		"type":"checkbox",
-		"id":"section_width",
-		"label":"Fullwidth?",
-		"default": false
-	  },
- 	 {
-           "type": "checkbox",
-           "id": "hide_mobile",
-           "label": "Hide Section in Mobile?",
-           "default": false
-        },
-	  {
-        "type": "paragraph",
-        "content": "Left/Right Padding : Fullwidth Section Only==="
-      }, 	
-      {
-        "type": "range",
-        "id": "pad-desk",
-        "label": "Desktop",
-        "default": 55,
-        "min": 0,
-        "max": 100,
-        "step": 1
-      },
-      {
-        "type": "range",
-        "id": "pad-ipad",
-        "label": "Tablet",
-        "default": 15,
-        "min": 0,
-        "max": 30,
-        "step": 1
-      },
-      {
-        "type": "range",
-        "id": "pad-mbl",
-        "label": "Mobile",
-        "default": 10,
-        "min": 0,
-        "max": 20,
-        "step": 1
-      },
-	 {
-        "type": "paragraph",
-        "content": "Grid==="
-      }, 
-	 {
-        "type": "range",
-        "id": "grid-spacing",
-        "label": "Spacing : Desktop",
-        "default": 15,
-        "min": 0,
-        "max": 30,
-        "step": 1,
-		"unit":"px",
-		"info":"space between two grid/box."
-      },
-     {
-        "type": "range",
-        "id": "grid-spacing-mbl",
-        "label": "Spacing : Mobile",
-        "default": 5,
-        "min": 0,
-        "max": 30,
-        "step": 1,
-		"unit":"px"		
-      },
-	 {
-        "type": "range",
-        "id": "grid-spacing-col",
-        "label": "Select Column",
-        "default": 2,
-        "min": 2,
-        "max": 5,
-        "step": 1,
-		"info":"[Column Selection guide](https://www.adornthemes.com/masonry-column-selection/)"
-      },		
-	  {
-        "type": "range",
-        "id": "box-width",
-        "label": "Detail Box Width",
-        "default": 50,
-        "min": 30,
-        "max": 90,
-        "step": 10,
-		"unit":"%"
-      },
-	  {
-        "type": "color",
-        "id": "box_bg",
-        "label": "Detail Box Background",
-        "default": "#fff"
-      },
-	   {
-        "type": "color",
-        "id": "box_txt",
-        "label": "Detail Box Text",
-        "default": "#000"
-      },	
- 		{
-		"type":"checkbox",
-		"id":"disable_zoom",
-		"label":"Disable Image Hover Zoom Effect?",
-		"default": false
-	  },
-	 {
-		"type":"checkbox",
-		"id":"show_buttons",
-		"label":"Show Buttons?",
-		"default": true
-	  },
- {
-          "type": "select",
-          "id": "btn-size-desk",
-          "label": "Button Size: Desktop",
-          "default": "btn-sm",
-          "options": [
-          {
-          "label": "Small",
-          "value": "btn-sm"
-          },
-          {
-          "label": "Medium",
-          "value": "btn-md"
-          },
-          {
-          "label": "Large",
-          "value": "btn-lg"
-          }	
-          ]
-          }, 
-          {
-          "type": "select",
-          "id": "btn-size-mob",
-          "label": "Button Size : Mobile",
-          "default": "mob-btn-sm",
-          "options": [
-          {
-          "label": "Small",
-          "value": "mob-btn-sm"
-          },
-          {
-          "label": "Medium",
-          "value": "mob-btn-md"
-          },
-          {
-          "label": "Large",
-          "value": "mob-btn-lg"
-          }	
-          ]
-          },      
-		{
-		"type":"checkbox",
-		"id":"snow_effect",
-		"label":"Enable Snow Effect?",
-		"default": false,
-		"info":"For Christmas"
-	   },
+{
+  "name": "t:sections.collection_banner.name",
+  "class": "shopify-section--collection-banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:global.colors.scheme",
+      "default": "scheme-4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:global.image.image",
+      "info": "t:sections.collection_banner.image_info"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "t:global.image.mobile_image",
+      "info": "t:sections.collection_banner.mobile_image_info"
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "t:global.image.size",
+      "options": [
         {
-          "type": "select",
-          "id": "snow_style",
-          "label": "Snow Style",
-          "default": "style1",         
-          "options": [
-            {
-            "value": "style1",
-            "label": "Falling Down"
-            },
-            {
-            "value": "style2",
-            "label": "Falling From Left"
-            }
-            ]
-          },
-	 {
-        "type": "paragraph",      
-        "content": "Set font size from --> Theme Settings --> Fonts, Colors and Styles --> Collection Banner"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "featured_collection",
-        "name": "Collection",
-        "settings": [
-          {
-            "label": "Collection",
-            "id": "collection",
-            "type": "collection"
-          },
-		  {
-			"type":"image_picker",
-			"id":"collection_image",
-			"label":"Upload Image"			
-		  },
-		  {
- 			"type":"textarea",
-			"id":"collection_name",
-			"label":"Custom Name",
-			"info":"use <strong>your text here</strong> for bold font"
-		  },
-		 {
- 			"type":"textarea",
-			"id":"collection_name2",
-			"label":"Detail Text"			
-		  },
-		  {
-            "type": "select",
-            "id": "textalign",
-            "label": "Text Position",
-            "default": "center",
-            "options": [            
- 			  { "value":"left", "label":"Left" },
-              { "value":"center", "label":"Center" },
-			  { "value":"right", "label":"Right" }
-            ]
-         },
-	    {
- 			"type":"checkbox",
-			"id":"text-left",
-			"label":"Text Align Left",
-			"default":false,
-			"info":"Optional : You can enable this option for Text Position left"
-		  },
-		  {
-            "type": "text",
-            "id": "collection_btn",
-            "label": "Button Text",
-            "default": "Shop Now"
-          },         
-		 {
-            "type": "select",
-            "id": "width",
-            "label": "Column Width",
-            "default": "50%",
-			"info":"Total width of all block must not be more than 100%",
-            "options": [
-			  { "value": "20%", "label": "20%" },
-              { "value": "25%", "label": "25%" },
-              { "value": "33%", "label": "33%" },
-              { "value": "40%", "label": "40%" },
-              { "value": "50%", "label": "50%" },
-              { "value": "60%", "label": "60%" },
-              { "value": "66%", "label": "66%" },
-              { "value": "75%", "label": "75%" },
-              { "value": "80%", "label": "80%" },
-              { "value": "100%", "label": "100%" }
-            ]
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Collection Banners Masonry",
-        "category": "2. Collection",        
-        "blocks": [
-          {
-            "type": "featured_collection"
-          },
-          {
-            "type": "featured_collection"
-          }          	  
-        ]
-      }
-    ]
-  }
+          "value": "auto",
+          "label": "t:global.sizes.original_image_ratio"
+        },
+        {
+          "value": "xs",
+          "label": "t:global.sizes.x_small"
+        },
+        {
+          "value": "sm",
+          "label": "t:global.sizes.small"
+        },
+        {
+          "value": "md",
+          "label": "t:global.sizes.medium"
+        },
+        {
+          "value": "lg",
+          "label": "t:global.sizes.large"
+        }
+      ],
+      "info": "t:global.image.ratio_avoid_cropping_info",
+      "default": "auto"
+    },
+    {
+      "type": "checkbox",
+      "id": "allow_transparent_header",
+      "label": "t:global.section.allow_transparent_header",
+      "info": "t:global.section.allow_transparent_header_info",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "reveal",
+      "label": "t:sections.collection_banner.reveal",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_parallax",
+      "label": "t:sections.collection_banner.enable_parallax",
+      "info": "t:sections.collection_banner.enable_parallax_info",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "label": "t:sections.collection_banner.show_image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_title",
+      "label": "t:sections.collection_banner.show_collection_title",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "label": "t:sections.collection_banner.show_collection_description",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumb",
+      "label": "t:sections.collection_banner.show_breadcrumb",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "t:global.sizes.content_width",
+      "options": [
+        {
+          "value": "xs",
+          "label": "t:global.sizes.x_small"
+        },
+        {
+          "value": "sm",
+          "label": "t:global.sizes.small"
+        },
+        {
+          "value": "md",
+          "label": "t:global.sizes.medium"
+        },
+        {
+          "value": "lg",
+          "label": "t:global.sizes.large"
+        },
+        {
+          "value": "xl",
+          "label": "t:global.sizes.x_large"
+        }
+      ],
+      "default": "xs"
+    },
+    {
+      "type": "header",
+      "content": "t:global.colors.category",
+      "info": "t:sections.collection_banner.colors_category_info"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "t:global.colors.overlay_color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "t:global.colors.overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 30
+    }
+  ]
+}
 {% endschema %}

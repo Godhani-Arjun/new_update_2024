@@ -9,77 +9,1171 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "scrolling_content_TyQjTA": {
+      "type": "scrolling-content",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "text_cqCyzY": {
+          "type": "text",
+          "disabled": true,
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "text": "Celebrate Black Friday with 10% Off on All Items– Valid until 17 Nov, 23:59"
           }
         },
-        "button": {
-          "type": "buttons",
+        "text_UCywck": {
+          "type": "text",
+          "disabled": true,
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "Welcome to Plinths New York!"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "text_cqCyzY",
+        "text_UCywck"
       ],
       "settings": {
-        "image": "shopify://shop_images/breakfast-from-above.jpg",
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "unique_class": "",
+        "separate_section_with_border": true,
+        "scrolling_speed": 0.1,
+        "scroll_direction": "left",
+        "text_font": "heading",
+        "text_font_size_mobile": 12,
+        "text_font_size_desktop": 12,
+        "section_vertical_spacing_mobile": 10,
+        "section_vertical_spacing_desktop": 10,
+        "item_horizontal_spacing_mobile": 40,
+        "item_horizontal_spacing_desktop": 120,
+        "background": "#e2b7b9",
+        "text_color": "#292424"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "scrolling_content_AHxijw": {
+      "type": "scrolling-content",
+      "blocks": {
+        "text_NtUDXV": {
+          "type": "text",
+          "settings": {
+            "text": "Exclusive sale 30% off our Luxe Marble Line"
+          }
+        },
+        "text_yRNipL": {
+          "type": "text",
+          "settings": {
+            "text": "Enter Marble30% at checkout"
+          }
+        }
+      },
+      "block_order": [
+        "text_NtUDXV",
+        "text_yRNipL"
+      ],
+      "disabled": true,
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "unique_class": "",
+        "separate_section_with_border": true,
+        "scrolling_speed": 0.3,
+        "scroll_direction": "right",
+        "text_font": "heading",
+        "text_font_size_mobile": 12,
+        "text_font_size_desktop": 12,
+        "section_vertical_spacing_mobile": 10,
+        "section_vertical_spacing_desktop": 10,
+        "item_horizontal_spacing_mobile": 40,
+        "item_horizontal_spacing_desktop": 120,
+        "background": "#e2b7b9",
+        "text_color": "#1a1918"
+      }
+    },
+    "video_XxAkRb": {
+      "type": "video",
+      "blocks": {
+        "play_KzNgVg": {
+          "type": "play",
+          "disabled": true,
+          "settings": {
+            "icon_color": "#ffffff"
+          }
+        },
+        "heading_THFN6w": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "",
+            "heading_tag": "h2"
+          }
+        },
+        "heading_KzD9B8": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "ELEVATE YOUR DISPLAYS",
+            "heading_tag": "h1"
+          }
+        },
+        "subheading_W9PzT9": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "<strong>\"DON'T BE MEDIOCRE AND ELEVATE YOUR EVENTS FROM ORDINARY TO EXTRAORDINARY!\"</strong>"
+          }
+        },
+        "richtext_wQEU7b": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "content": "<p><a href=\"/products/grandcollection\" title=\"Grand Collection\">SHOP NOW </a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "play_KzNgVg",
+        "heading_THFN6w",
+        "heading_KzD9B8",
+        "subheading_W9PzT9",
+        "richtext_wQEU7b"
+      ],
+      "disabled": true,
+      "settings": {
+        "autoplay": true,
+        "show_controls": false,
+        "video_size": "md",
+        "video": "shopify://files/videos/Website Video (1) (1).mov",
+        "mobile_video": "shopify://files/videos/Website Video (1) (1).mov",
+        "external_video_url": "",
+        "text_color": "#ffffff"
+      }
+    },
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Plinths_1.jpg",
+            "mobile_image": "shopify://shop_images/Plinths_1_-_Copy_2e61fe1f-75d8-4749-b79b-7eeae33eee54.jpg",
+            "subheading": "",
+            "title": "",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-end-center sm:text-center",
+            "content_max_width": 680,
+            "button_1_text": "",
+            "button_1_link": "shopify://collections/all-products",
+            "button_1_style": "solid",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 0,
+            "text_color": "#1c1c1c",
+            "border_color": "",
+            "gradient_overlay": ""
+          }
+        },
+        "image_dzKfRw": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/PlinthsNY_Founder.jpg",
+            "subheading": "Tell your story",
+            "title": "Image slide",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "content_max_width": 780,
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_1_style": "solid",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.65) 100%)"
+          }
+        },
+        "image_AJUPzT": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Gray_Brown_Simple_Gift_Voucher_Gift_certificate.png",
+            "subheading": "",
+            "title": "",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "content_max_width": 780,
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_1_style": "solid",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.65) 100%)"
+          }
+        }
+      },
+      "block_order": [
+        "slide-1",
+        "image_dzKfRw",
+        "image_AJUPzT"
+      ],
+      "settings": {
+        "allow_transparent_header": true,
+        "show_next_section_button": true,
+        "media_size": "md",
+        "autoplay": true,
+        "autoplay_pause_on_video": true,
+        "cycle_speed": 4,
+        "background": "#000000",
+        "controls_color": "#ffffff"
+      }
+    },
+    "featured-collections": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_3e49jK": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "products_count": 8,
+            "title": "",
+            "link_url": "",
+            "link_text": "View all"
+          }
+        },
+        "collection_KaDfyU": {
+          "type": "collection",
+          "settings": {
+            "collection": "best-selling",
+            "products_count": 9,
+            "title": "",
+            "link_url": "shopify://collections/best-selling",
+            "link_text": "View all"
+          }
+        },
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "new-arrivals",
+            "products_count": 3,
+            "title": "",
+            "link_url": "shopify://collections/new-arrivals",
+            "link_text": "View all"
+          }
+        }
+      },
+      "block_order": [
+        "collection_3e49jK",
+        "collection_KaDfyU",
+        "collection-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-4",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": true,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "The Best Always Sells"
+      }
+    },
+    "before_after_qbiPUp": {
+      "type": "before-after",
+      "blocks": {
+        "before_qqEHez": {
+          "type": "before",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/image00002.jpg",
+            "mobile_image": "shopify://shop_images/image00002.jpg",
+            "text": "Before",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link"
+          }
+        },
+        "after_RWPnWr": {
+          "type": "after",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/image00001.jpg",
+            "mobile_image": "shopify://shop_images/image00001.jpg",
+            "text": "After",
+            "link_text": "",
+            "link_url": "shopify://products/collection-1",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "before_qqEHez",
+        "after_RWPnWr"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-4",
+        "separate_section_with_border": true,
+        "subheading": "",
+        "title": "Before/after",
+        "content": "<p>Transform Your Events with our Luxurious 'Black Range' Collections!</p>",
+        "cursor_direction": "horizontal",
+        "cursor_initial_position": 50,
+        "cursor_background": "#ffffff",
+        "cursor_arrows_color": "#000000"
+      }
+    },
+    "media_grid_pKLLRk": {
+      "type": "media-grid",
+      "blocks": {
+        "image_HLNpCe": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/1.15.jpg",
+            "column_count": "8",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_tWrRnK": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/1.17.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_aYrHmf": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/1.13.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_HLNpCe",
+        "image_tWrRnK",
+        "image_aYrHmf"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-4",
+        "separate_section_with_border": false,
+        "desktop_row_height": 290,
+        "mobile_row_height": 180,
+        "section_width": "lg",
+        "spacing": "xs",
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "images_with_text_scroll_fggUgA": {
+      "type": "images-with-text-scroll",
+      "blocks": {
+        "image_with_text_PpNimm": {
+          "type": "image_with_text",
+          "settings": {
+            "subheading": "",
+            "title": "<strong>White</strong>",
+            "content": "<p>Ideal for showcasing jewelry, artwork, collectibles, and high-end products with elegance and style</p>",
+            "link_text": "Shop Now",
+            "link_url": "shopify://collections/all",
+            "link_style": "solid"
+          }
+        },
+        "image_with_text_T6edyf": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Gold_c794f6b7-7638-41ef-bdd8-9f55abdcf9b3.png",
+            "subheading": "",
+            "title": "<strong>Clear</strong>",
+            "content": "<p>Featuring a clear and transparent design, acrylic plinths offer a sleek and minimalist aesthetic, perfectly complementing any style</p>",
+            "link_text": "Order Now",
+            "link_url": "shopify://collections/all",
+            "link_style": "solid"
+          }
+        },
+        "image_with_text_HgUJCx": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/69c3d59a-4d6c-409c-ad76-4fb6e132acd8.jpg",
+            "subheading": "",
+            "title": "<strong>Black</strong>",
+            "content": "<p>Discover a versatile and elegant solution for showcasing your products and merchandise with style and sophistication</p>",
+            "link_text": "Buy Now",
+            "link_url": "shopify://collections/all",
+            "link_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_PpNimm",
+        "image_with_text_T6edyf",
+        "image_with_text_HgUJCx"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-2",
+        "image_position": "start",
+        "text_alignment": "center",
+        "heading_tag": "h3",
+        "overlay_color": "#ffffff",
+        "overlay_opacity": 0
+      }
+    },
+    "image_with_text_rCVUyr": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_8rmnXj": {
+          "type": "subheading",
+          "settings": {
+            "text": "#PLINTHSNEWYORK"
+          }
+        },
+        "heading_7FxfCf": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Stand Out with Acrylic Displays</strong>",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_Tt8qHF": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Enhance Your Display with Our Versatile Plinths - Ideal for Showcasing Centerpieces, Floral Arrangements, Sculptures, and More</p>"
+          }
+        },
+        "button_kBcLGg": {
+          "type": "button",
+          "settings": {
+            "style": "outline",
+            "text": "Buy Now",
+            "url": "shopify://collections/all",
+            "background": "#1c1c1c",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_8rmnXj",
+        "heading_7FxfCf",
+        "richtext_Tt8qHF",
+        "button_kBcLGg"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/WhatsApp_Image_2023-06-20_at_22.48.54_86c2f691-03f0-49ed-b4ce-8be6b82f9dc0.jpg",
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "sm",
+        "remove_vertical_spacing": true
+      }
+    },
+    "image_with_text_AhUD77": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_iVt8V8": {
+          "type": "subheading",
+          "settings": {
+            "text": "#PLINTHSNEWYORK"
+          }
+        },
+        "heading_UXUkHt": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Eye-Catching Event Solutions</strong>",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_mY6URM": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Add Elegance and Sophistication to Any Event: Weddings, Corporate Gatherings, Galas, and More with Our Plinths!</p>"
+          }
+        },
+        "button_b4QcfR": {
+          "type": "button",
+          "settings": {
+            "style": "outline",
+            "text": "Order Now",
+            "url": "shopify://collections/all",
+            "background": "#1c1c1c",
+            "text_color": "#1c1c1c"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_iVt8V8",
+        "heading_UXUkHt",
+        "richtext_mY6URM",
+        "button_b4QcfR"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/249927249_266033488790248_1714490499332323203_n_1.jpg",
+        "mobile_image": "shopify://shop_images/249927249_266033488790248_1714490499332323203_n_1.jpg",
+        "reveal_on_scroll": true,
+        "image_position": "end",
+        "content_width": "md",
+        "remove_vertical_spacing": true
+      }
+    },
+    "image_with_text_VJXPGz": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_Wrjdhc": {
+          "type": "subheading",
+          "settings": {
+            "text": "#PLINTHSNEWYORK"
+          }
+        },
+        "heading_aiCikk": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Elegant Plinths for Events</strong>",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_WBKUqQ": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>We offer a wide range of plinths to suit different event themes and styles. From modern acrylic ones to sleek metal ones, we have something for everyone.</p>"
+          }
+        },
+        "button_GV4aRq": {
+          "type": "button",
+          "settings": {
+            "style": "outline",
+            "text": "Shop Now",
+            "url": "shopify://collections/all",
+            "background": "#1c1c1c",
+            "text_color": "#1c1c1c"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_Wrjdhc",
+        "heading_aiCikk",
+        "richtext_WBKUqQ",
+        "button_GV4aRq"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/WhatsApp_Image_2023-11-09_at_4.jpg",
+        "mobile_image": "shopify://shop_images/WhatsApp_Image_2023-11-09_at_4.jpg",
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "md",
+        "remove_vertical_spacing": true
+      }
+    },
+    "image_with_text_block_3crqL3": {
+      "type": "image-with-text-block",
+      "blocks": {
+        "subheading_QcCDAX": {
+          "type": "subheading",
+          "settings": {
+            "text": "<a href=\"/products/large-trio-set\" title=\"Large Trio Set\">Large Trio Set</a>"
+          }
+        },
+        "richtext_cbETh8": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Transform your space into a gallery of sophistication with our Large Trio Set – a meticulously crafted collection designed to elevate your most cherished pieces.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_QcCDAX",
+        "richtext_cbETh8"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "image_size": "md",
+        "image": "shopify://shop_images/WhatsApp_Image_2023-11-21_at_12.39.06_PM_1.jpg",
+        "mobile_image": "shopify://shop_images/WhatsApp_Image_2023-11-21_at_12.39.06_PM_5.jpg",
+        "content_width": "sm",
+        "enable_parallax": false,
+        "remove_vertical_spacing": true
+      }
+    },
+    "17105263174ff898ef": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_reviews_all_reviews_iNFGbw": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/all-reviews/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "klaviyo_reviews_all_reviews_iNFGbw"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
+      }
+    },
+    "scrolling_content_DknhYB": {
+      "type": "scrolling-content",
+      "blocks": {
+        "text_3YeM4R": {
+          "type": "text",
+          "settings": {
+            "text": "We are certified for food safety"
+          }
+        },
+        "image_HGt6ak": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/007---Vegan-Certified.svg"
+          }
+        }
+      },
+      "block_order": [
+        "text_3YeM4R",
+        "image_HGt6ak"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "unique_class": "custom_scroll_content",
+        "separate_section_with_border": true,
+        "scrolling_speed": 0.2,
+        "scroll_direction": "right",
+        "text_font": "body",
+        "text_font_size_mobile": 10,
+        "text_font_size_desktop": 10,
+        "section_vertical_spacing_mobile": 14,
+        "section_vertical_spacing_desktop": 10,
+        "item_horizontal_spacing_mobile": 10,
+        "item_horizontal_spacing_desktop": 20,
+        "background": "#000000",
+        "text_color": "#ffffff"
+      }
+    },
+    "text_with_icons_zcWcH9": {
+      "type": "text-with-icons",
+      "blocks": {
+        "item_EagX4H": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-delivery-truck",
+            "custom_icon": "shopify://shop_images/Group.png",
+            "icon_width": 48,
+            "mobile_icon_width": 48,
+            "title": "1-Year Craftsmanship Warranty",
+            "content": ""
+          }
+        },
+        "item_XRGYcg": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-customer-support",
+            "custom_icon": "shopify://shop_images/Group_1.png",
+            "icon_width": 48,
+            "mobile_icon_width": 48,
+            "title": "3 day turn around time available",
+            "content": ""
+          }
+        },
+        "item_KRnUXM": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "icon": "picto-shield",
+            "custom_icon": "shopify://shop_images/Group_1000004765.png",
+            "icon_width": 48,
+            "mobile_icon_width": 48,
+            "title": "24/7 Hour Customer Service Available",
+            "content": ""
+          }
+        },
+        "item_4yAYW9": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-award-gift",
+            "custom_icon": "shopify://shop_images/Vector.png",
+            "icon_width": 48,
+            "mobile_icon_width": 48,
+            "title": "Shipping Worldwide",
+            "content": ""
+          }
+        },
+        "item_GXHRbg": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-award-gift",
+            "custom_icon": "shopify://shop_images/Group_1000004767.png",
+            "icon_width": 48,
+            "mobile_icon_width": 48,
+            "title": "Payment Installment Options Available at Checkout",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_EagX4H",
+        "item_XRGYcg",
+        "item_KRnUXM",
+        "item_4yAYW9",
+        "item_GXHRbg"
+      ],
+      "settings": {
+        "unique_class": "custom_text_icon",
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "stack_on_mobile": false,
+        "icon_color": "",
+        "text_color": "",
+        "text_alignment": "center"
+      }
+    },
+    "collection_list_NXgc3m": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_NrWxta": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "the-white-range",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "White Classics",
+            "button_link": "shopify://collections/light-classics",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_PnT7GT": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "dark-classics",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "Black Classics",
+            "button_link": "shopify://collections/dark-classics",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_G66LAW": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "clear",
+            "image": "shopify://shop_images/Crystal-ClearCollection-2_39e217b1-22c0-417d-af64-52b82e4bc724.jpg",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "Clear",
+            "button_link": "shopify://collections/clear",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_4mHQxT": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "round-collection",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "Round",
+            "button_link": "shopify://collections/round-collection",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_Vt8jd6": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "metal",
+            "image": "shopify://shop_images/Gold_S.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "Metal",
+            "button_link": "shopify://collections/metal",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_3HzNj3": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "stone",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "Stone",
+            "button_link": "shopify://collections/stone",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "collection_NrWxta",
+        "collection_PnT7GT",
+        "collection_G66LAW",
+        "collection_4mHQxT",
+        "collection_Vt8jd6",
+        "collection_3HzNj3"
+      ],
+      "custom_css": [
+        "/* Apply Playfair Display font to body text */body {font-family: \"Playfair Display\", serif;}",
+        " /* Apply Playfair Display font to headings */h1,h2,h3,h4,h5,h6 {font-family: \"Playfair Display\", serif;}",
+        " /* Optionally apply Playfair Display to other specific sections */.custom-class {font-family: \"Playfair Display\", serif;}"
+      ],
+      "settings": {
+        "unique_class": "custom_collection_list",
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": false,
+        "image_size": "auto",
+        "show_text_outside": true,
+        "space_items": true,
+        "stack_collections": false,
+        "collections_per_row_desktop": 3,
+        "subheading": "",
+        "title": "Shop By Style",
+        "content": ""
+      }
+    },
+    "video_collection_UQez7k": {
+      "type": "video-collection",
+      "blocks": {
+        "collection_kQbeVG": {
+          "type": "collection",
+          "settings": {
+            "product_list": [
+              "collection-1",
+              "balancearray",
+              "the-white-range-copy"
+            ],
+            "tile_heading": "Ever Serve Serving Ware",
+            "collection_url": "shopify://collections/ever-serve-serving-ware"
+          }
+        }
+      },
+      "block_order": [
+        "collection_kQbeVG"
+      ],
+      "custom_css": [
+        "/* Apply Playfair Display font to body text */body {font-family: \"Playfair Display\", serif;}",
+        " /* Apply Playfair Display font to headings */h1,h2,h3,h4,h5,h6 {font-family: \"Playfair Display\", serif;}",
+        " /* Optionally apply Playfair Display to other specific sections */.custom-class {font-family: \"Playfair Display\", serif;}"
+      ],
+      "settings": {
+        "heading": "Displays & Risers Collection",
+        "description": "<p>Enhance Your Display with Our Versatile Plinths - Ideal for Showcasing Centerpieces, Floral Arrangements, Sculptures, and More</p>",
+        "video": "shopify://files/videos/White-Range_compressed.mp4",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "button_text": "View all Product",
+        "view_all_collection": "shopify://collections/displays-and-risers"
+      }
+    },
+    "video_collection_yVicjd": {
+      "type": "video-collection",
+      "blocks": {
+        "collection_MpCU7M": {
+          "type": "collection",
+          "settings": {
+            "product_list": [
+              "chafing-guard"
+            ],
+            "tile_heading": "Ever Serve Serving Ware",
+            "collection_url": "shopify://collections/ever-serve-serving-ware"
+          }
+        }
+      },
+      "block_order": [
+        "collection_MpCU7M"
+      ],
+      "custom_css": [
+        "/* Apply Playfair Display font to body text */body {font-family: \"Playfair Display\", serif;}",
+        " /* Apply Playfair Display font to headings */h1,h2,h3,h4,h5,h6 {font-family: \"Playfair Display\", serif;}",
+        " /* Optionally apply Playfair Display to other specific sections */.custom-class {font-family: \"Playfair Display\", serif;}"
+      ],
+      "settings": {
+        "heading": "Latch collection",
+        "description": "<p>Elegance in Every Detail: Perfect Skirting for Your Chafing Dish</p>",
+        "video": "shopify://files/videos/Latch_compressed.mp4",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "button_text": "",
+        "view_all_collection": ""
+      }
+    },
+    "video_collection_biHGJj": {
+      "type": "video-collection",
+      "blocks": {
+        "collection_T3RYFY": {
+          "type": "collection",
+          "settings": {
+            "product_list": [
+              "trio-shallow-plates",
+              "grande-rounds",
+              "classic-rounds",
+              "petite-rounds"
+            ],
+            "tile_heading": "Ever Serve Serving Ware",
+            "collection_url": "shopify://collections/ever-serve-serving-ware"
+          }
+        }
+      },
+      "block_order": [
+        "collection_T3RYFY"
+      ],
+      "custom_css": [
+        "/* Apply Playfair Display font to body text */body {font-family: \"Playfair Display\", serif;}",
+        " /* Apply Playfair Display font to headings */h1,h2,h3,h4,h5,h6 {font-family: \"Playfair Display\", serif;}",
+        " /* Optionally apply Playfair Display to other specific sections */.custom-class {font-family: \"Playfair Display\", serif;}"
+      ],
+      "settings": {
+        "heading": "Plates and Platters",
+        "description": "<p>Unbreakable Beauty in Every Dish</p>",
+        "video": "shopify://files/videos/All Plates and Platters _compressed.mp4",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "button_text": "View all Product",
+        "view_all_collection": "shopify://collections/everserve-serving-ware"
+      }
+    },
+    "custom_collection_list_9xhr4p": {
+      "type": "custom-collection-list",
+      "blocks": {
+        "collection_eU7XYY": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "best-selling",
+            "image": "shopify://shop_images/Best_Seller_Picture.jpg",
+            "expand_collection": false,
+            "content_position": "place-self-end-center text-center",
+            "subheading": "",
+            "title": "",
+            "button_text": "Best Sellers",
+            "button_link": "shopify://collections/best-selling",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_4aQJAG": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "new-arrivals",
+            "image": "shopify://shop_images/New_Arrival_Picture.jpg",
+            "expand_collection": false,
+            "content_position": "place-self-end-center text-center",
+            "subheading": "",
+            "title": "",
+            "button_text": "New Arrivals",
+            "button_link": "shopify://collections/new-arrivals",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_TPAeea": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "accessories",
+            "image": "shopify://shop_images/Plinths_Porter_2_eebbdc67-d631-4cd8-88c1-822c28cd600f.jpg",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "Accessories",
+            "button_link": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_eU7XYY",
+        "collection_4aQJAG",
+        "collection_TPAeea"
+      ],
+      "custom_css": [
+        "/* Apply Playfair Display font to body text */body {font-family: \"Playfair Display\", serif;}",
+        " /* Apply Playfair Display font to headings */h1,h2,h3,h4,h5,h6 {font-family: \"Playfair Display\", serif;}",
+        " /* Optionally apply Playfair Display to other specific sections */.custom-class {font-family: \"Playfair Display\", serif;}"
+      ],
+      "settings": {
+        "unique_class": "custom_featured_collection_second",
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": false,
+        "image_size": "auto",
+        "show_text_outside": true,
+        "space_items": false,
+        "stack_collections": true,
+        "collections_per_row_desktop": 3,
+        "subheading": "",
+        "title": "Featured Collection",
+        "content": ""
+      }
+    },
+    "testimonial_slider_rPCbmd": {
+      "type": "testimonial-slider",
+      "blocks": {
+        "column_prVHph": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Mask_group_34.png",
+            "profile_image": "shopify://shop_images/image_3_1.png",
+            "review": "<p>When we unpacked the beautiful white Classics we discovered there was some damage in shipping. we verified the products damage and sent the requested validation to plinth’s new York. They were quick to respond, thorough in the process of documenting and correcting the shipping damage, and completely committed to our satisfaction for replacement.</p>",
+            "review-author": "<p>- Greg Manuel</p>",
+            "review-tag": "off-Site Catering"
+          }
+        },
+        "column_L4ngcF": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Mask_group_34.png",
+            "profile_image": "shopify://shop_images/image_3_1.png",
+            "review": "<p>These risers have been the ultimate show stopper for every set up!</p><p>They have completely elevated the art of food and entertainment! The combination of my passion/expertise and my plinths.</p><p>I am able to create one of a kind masterpieces - the set up designs are endless!</p><p>These were the best investments for my little business. I am looking forward to adding the newest edition to my inventory.</p>",
+            "review-author": "<p>- Eman</p>",
+            "review-tag": "The Table Top"
+          }
+        },
+        "column_XyggHD": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Frame_1171275734.png",
+            "profile_image": "shopify://shop_images/image_3_1.png",
+            "review": "<p>Thank you for your commitment to excellence and for making such a positive impact on my business.</p><p>I'm excited to see what the future holds for Plinths New York and am confident that you'll continue to exceed expectations</p>",
+            "review-author": "<p>- Parvaneh Zargarzadeh</p>",
+            "review-tag": "Elenka Catering"
+          }
+        }
+      },
+      "block_order": [
+        "column_prVHph",
+        "column_L4ngcF",
+        "column_XyggHD"
+      ],
+      "settings": {
+        "heading": "What Our Customers Saying"
+      }
+    },
+    "17279315520a37e4c7": {
+      "type": "apps",
+      "blocks": {
+        "reelup_shoppable_videos_reels_reelup_playlist_slider_AMQxV8": {
+          "type": "shopify://apps/reelup-shoppable-videos-reels/blocks/reelup-playlist-slider/a8ec9e4d-d192-44f7-9c23-595f9ee7dd5b",
+          "settings": {
+            "playlist_id": "",
+            "debugging_script": ""
+          }
+        }
+      },
+      "block_order": [
+        "reelup_shoppable_videos_reels_reelup_playlist_slider_AMQxV8"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "scrolling_content_TyQjTA",
+    "scrolling_content_AHxijw",
+    "video_XxAkRb",
+    "slideshow",
+    "featured-collections",
+    "before_after_qbiPUp",
+    "media_grid_pKLLRk",
+    "images_with_text_scroll_fggUgA",
+    "image_with_text_rCVUyr",
+    "image_with_text_AhUD77",
+    "image_with_text_VJXPGz",
+    "image_with_text_block_3crqL3",
+    "17105263174ff898ef",
+    "scrolling_content_DknhYB",
+    "text_with_icons_zcWcH9",
+    "collection_list_NXgc3m",
+    "video_collection_UQez7k",
+    "video_collection_yVicjd",
+    "video_collection_biHGJj",
+    "custom_collection_list_9xhr4p",
+    "testimonial_slider_rPCbmd",
+    "17279315520a37e4c7"
   ]
 }

@@ -1,1 +1,96 @@
-{"name":"t:sections.header.name","type":"header","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"announcement-bar-0":{"type":"announcement","settings":{"text":"Welcome to our store","link":""}}},"block_order":["announcement-bar-0"],"settings":{"color_scheme":"scheme-1","show_line_separator":true,"show_social":false,"auto_rotate":false,"change_slides_speed":5,"enable_country_selector":false,"enable_language_selector":false}},"header":{"type":"header","settings":{"logo_position":"middle-left","menu":"main-menu","menu_type_desktop":"dropdown","sticky_header_type":"on-scroll-up","show_line_separator":true,"color_scheme":"scheme-1","menu_color_scheme":"scheme-1","enable_country_selector":true,"enable_language_selector":true,"enable_customer_avatar":true,"mobile_logo_position":"center","margin_bottom":0,"padding_top":20,"padding_bottom":20}}},"order":["announcement-bar","header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "message-1": {
+          "type": "message",
+          "settings": {
+            "text": "Celebrate Extended Black Friday! Enjoy 30% off storewide – valid until Dec 10 2024, 23:59 PM EST"
+          }
+        },
+        "message_hAe8r7": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "text": "Subscribe to our email list for Exclusive Private Sales and Special Offers"
+          }
+        }
+      },
+      "block_order": [
+        "message-1",
+        "message_hAe8r7"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "enable_sticky": true,
+        "autoplay": true,
+        "social_icons": true,
+        "cycle_speed": 5,
+        "desktop_font_size": 11,
+        "mobile_font_size": 10
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "mega_menu_RfXtET": {
+          "type": "mega_menu",
+          "settings": {
+            "menu_item": "",
+            "images_position": "right",
+            "image_1_heading": "",
+            "image_1_text": "",
+            "image_1_link": "",
+            "image_2_heading": "",
+            "image_2_text": "",
+            "image_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_RfXtET"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "enable_sticky": true,
+        "show_separation_border": true,
+        "reduce_padding": true,
+        "logo": "shopify://shop_images/01b2fa6d-1fd1-4549-bd08-46497570433b_1_9d2e5c91-c39f-4a2f-a163-5bc2f8deabc1.png",
+        "logo_max_width": 215,
+        "logo_mobile_max_width": 140,
+        "menu": "main-menu",
+        "sidebar_menu": "mobile-menu",
+        "menu_open_trigger": "hover",
+        "enable_search": true,
+        "sidebar_color_scheme": "scheme-2",
+        "sidebar_text_font": "heading",
+        "sidebar_show_dividers": false,
+        "icon_text": true,
+        "layout": "drawer",
+        "show_icons": true,
+        "show_country_selector": true,
+        "show_country_name": true,
+        "show_country_flag": true,
+        "show_locale_selector": false,
+        "transparent_header_text_color": "#ffffff",
+        "transparent_logo": "shopify://shop_images/01b2fa6d-1fd1-4549-bd08-46497570433b_1.png"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

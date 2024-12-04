@@ -1,0 +1,59 @@
+{% if template contains 'new-product' %}
+    <div class="product-breadcrumbs">
+    <div class="container">
+    <div class="product-navigation">
+        <a href="/"><span>{{ shop.name }}</span></a> - 
+{% for collection in product.collections %}
+    <a href="{{collection.url}}"><span>{{ collection.title }}</span></a> - 
+{% endfor %}
+
+<span>{{ product.title }}</span>
+    </div>
+    </div>
+    </div>
+{% endif %}
+{% schema %}
+    {
+      "name": "Product Breadcrumbs",
+      "tag": "section",
+      "settings": [],
+      "presets": [
+        {
+          "name": "Product Breadcrumbs"
+        }
+      ]
+    }
+    {% endschema %}
+
+    <style>
+        .product-breadcrumbs{
+            border-top: 2px solid #d9d9d9;
+            border-bottom: 2px solid #d9d9d9;
+            margin-top:100px;
+        }
+.product-navigation {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+.product-navigation > * {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 1px !important;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+}
+@media(max-width:1199px){
+    .product-breadcrumbs .container{padding: 0 20px !important;}
+    .product-breadcrumbs{margin-top: 50px;}
+}
+@media(max-width:1023px){
+    .product-breadcrumbs{margin-top: 0;}
+}
+@media(max-width:989px){
+    .product-breadcrumbs{margin-bottom: 50px;}
+}
+@media(max-width:749px){
+    .product-breadcrumbs{display: none;}
+}
+    </style>

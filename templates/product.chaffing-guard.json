@@ -1,0 +1,177 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "zp-product-header-content": {
+      "type": "product-header-content-zipifypages",
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h1"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {
+          }
+        },
+        "text_jyaQJJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Elevate your event with \"Chaffing Guard\" by Plinths New York, a revolutionary solution combining elegance and functionality. Crafted from premium acrylic, these guards seamlessly blend with any decor, ensuring an unobtrusive yet stylish touch. Safeguard your plinths effortlessly and elevate your event's aesthetics with this essential accessory.<\/p>"
+          }
+        },
+        "text_qYmM3Y": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Made out of premium quality 4.5mm acrylic<\/p>"
+          }
+        },
+        "separator_xV3ctt": {
+          "type": "separator",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_type": "block",
+            "color_selector_type": "color",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "pre_order_now_wod_popups_block_A7zb9t": {
+          "type": "shopify:\/\/apps\/preorder-now-wod-preorders\/blocks\/popups-block\/fdf17d17-ef12-4a7b-8383-20cc1fc2a4b6",
+          "settings": {
+            "color": "#000000"
+          }
+        },
+        "separator_DfQ3j3": {
+          "type": "separator",
+          "settings": {
+          }
+        },
+        "accordion_etGXMH": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "picto-star",
+            "title": "<strong>DIMENSION (INCHES)<\/strong>",
+            "content": "<p>24\" x 14\" x 9\"<\/p>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {
+          }
+        },
+        "complementary_products": {
+          "type": "complementary_products",
+          "settings": {
+            "title": "Pairs well with",
+            "products_count": 2,
+            "show_below_gallery": true,
+            "stack_products": false,
+            "show_quick_buy": true
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "separator",
+        "text_jyaQJJ",
+        "text_qYmM3Y",
+        "separator_xV3ctt",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "pre_order_now_wod_popups_block_A7zb9t",
+        "separator_DfQ3j3",
+        "accordion_etGXMH",
+        "payment_terms",
+        "complementary_products"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "container_size": "lg",
+        "product_info_size": 35,
+        "show_sticky_add_to_cart": true,
+        "center_basic_info": false,
+        "desktop_media_layout": "grid",
+        "desktop_media_grid_gap": 30,
+        "mobile_controls": "dots",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "recommendations_count": 10,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "",
+        "title": "Related products",
+        "content": ""
+      }
+    },
+    "zp-product-footer-content": {
+      "type": "product-footer-content-zipifypages",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "zp-product-header-content",
+    "main",
+    "related-products",
+    "zp-product-footer-content"
+  ]
+}

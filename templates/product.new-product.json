@@ -1,0 +1,272 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "feature_with_icon_Dmw4XP": {
+          "type": "feature_with_icon",
+          "settings": {
+            "text": "1-Year Craftsmanship Warranty",
+            "link": "",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/Group.png",
+            "icon_width": 16,
+            "background": "#ffffff",
+            "text_color": "#6b6b6b",
+            "border_color": ""
+          }
+        },
+        "feature_with_icon_YAwzCN": {
+          "type": "feature_with_icon",
+          "settings": {
+            "text": "3 day turn around time available",
+            "link": "",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/Group_1.png",
+            "icon_width": 16,
+            "background": "#ffffff",
+            "text_color": "#6b6b6b",
+            "border_color": ""
+          }
+        },
+        "feature_with_icon_MfQ4An": {
+          "type": "feature_with_icon",
+          "settings": {
+            "text": "Shipping Worldwide",
+            "link": "",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/Vector.png",
+            "icon_width": 16,
+            "background": "#ffffff",
+            "text_color": "#6b6b6b",
+            "border_color": ""
+          }
+        },
+        "feature_with_icon_mNccdw": {
+          "type": "feature_with_icon",
+          "settings": {
+            "text": "Payment Installment Options Available at Checkout",
+            "link": "",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/Group_1000004767.png",
+            "icon_width": 16,
+            "background": "#ffffff",
+            "text_color": "#6b6b6b",
+            "border_color": ""
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "judge_me_reviews_preview_badge_cTbRnX": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_type": "block",
+            "color_selector_type": "variant",
+            "size_chart_page": ""
+          }
+        },
+        "description_Lhgwgg": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "show_below_gallery": false
+          }
+        },
+        "column_7EVB3L": {
+          "type": "column",
+          "settings": {
+            "product-detail-title": "Shipping Information",
+            "product-detail": "<p>{{ product.metafields.custom.shipping_information | metafield_tag }}</p>",
+            "product-dimension-title-cm": "Dimension CM",
+            "product-dimension-cm": "<p>{{ product.metafields.custom.dimension_cm_ | metafield_tag }}</p>",
+            "product-dimension-title-in": "Dimension INCHES",
+            "product-dimension-in": "<p>{{ product.metafields.custom.dimension | metafield_tag }}</p>",
+            "product-care-title": "Product Details",
+            "product-care": "<p>{{ product.metafields.custom.product_details | metafield_tag }}</p>",
+            "product-shipping-title": "Product Care",
+            "product-shipping": "<p>{{ product.metafields.custom.product_care | metafield_tag }}</p>"
+          }
+        },
+        "easy_tabs_product_tabs_easytabs_block_product_bottom_widget_nYqezr": {
+          "type": "shopify://apps/easy-tabs-product-tabs/blocks/easytabs-block-product-bottom-widget/118e2a90-d31f-4cdf-b5c9-747e2bddd19a",
+          "disabled": true,
+          "settings": {
+            "placement_selector": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": false,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "feature_with_icon_Dmw4XP",
+        "feature_with_icon_YAwzCN",
+        "feature_with_icon_MfQ4An",
+        "feature_with_icon_mNccdw",
+        "title",
+        "judge_me_reviews_preview_badge_cTbRnX",
+        "price",
+        "payment_terms",
+        "variant_picker",
+        "description_Lhgwgg",
+        "column_7EVB3L",
+        "easy_tabs_product_tabs_easytabs_block_product_bottom_widget_nYqezr",
+        "quantity_selector",
+        "buy_buttons"
+      ],
+      "custom_css": [],
+      "settings": {
+        "color_scheme": "",
+        "container_size": "full",
+        "product_info_size": 47,
+        "show_sticky_add_to_cart": true,
+        "center_basic_info": false,
+        "desktop_media_layout": "side-carousel",
+        "desktop_media_grid_gap": 30,
+        "mobile_controls": "dots",
+        "enable_media_autoplay": true,
+        "enable_video_looping": true,
+        "enable_image_zoom": false,
+        "max_image_zoom_level": 3
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "recommendations_count": 10,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "",
+        "title": "Related products",
+        "content": ""
+      }
+    },
+    "recently_viewed_products_LtVbNh": {
+      "type": "recently-viewed-products",
+      "custom_css": [],
+      "settings": {
+        "separate_section_with_border": false,
+        "color_scheme": "",
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_count": 4,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "",
+        "title": "Recently Viewed",
+        "content": ""
+      }
+    },
+    "product_breadcrumbs_Nj8mnC": {
+      "type": "product-breadcrumbs",
+      "settings": {}
+    },
+    "before_after_e7aGhf": {
+      "type": "before-after",
+      "blocks": {
+        "before_CWtqxU": {
+          "type": "before",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/classy-low-set-6-piece-set-325917.jpg",
+            "mobile_image": "shopify://shop_images/classy-low-set-6-piece-set-325917.jpg",
+            "text": "Before",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link"
+          }
+        },
+        "after_9PgPJp": {
+          "type": "after",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/classy-low-set-6-piece-set-133722.jpg",
+            "mobile_image": "shopify://shop_images/classy-low-set-6-piece-set-133722.jpg",
+            "text": "After",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "before_CWtqxU",
+        "after_9PgPJp"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "subheading": "",
+        "title": "Before/after",
+        "content": "",
+        "cursor_direction": "horizontal",
+        "cursor_initial_position": 50,
+        "cursor_background": "#ffffff",
+        "cursor_arrows_color": "#000000"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "recently_viewed_products_LtVbNh",
+    "product_breadcrumbs_Nj8mnC",
+    "before_after_e7aGhf"
+  ]
+}

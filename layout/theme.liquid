@@ -1,158 +1,297 @@
 <!doctype html>
-<html class="no-js" lang="{{ shop.locale }}" {% if settings.rtl %}dir="rtl"{% endif %}>
-<head>
-  {%- capture metaTags -%}
+
+<html class="no-js" lang="{{ request.locale.iso_code }}" dir="{% render 'direction' %}">
+  <head>
+    {% render 'pandectes-rules' %}
+    <meta name="google-site-verification" content="Gpnfd9XwQnA8SA-6a5sXMf9uHSKmTSSxvpZSkXDVZo0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    >
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1367353780790981');
+      fbq('track', 'PageView');
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1367353780790981&ev=PageView&noscript=1"
+    ></noscript>
+    <!-- End Meta Pixel Code -->
+    <meta name="facebook-domain-verification" content="4nkk3tqxnas41vf3u4o3bwenoar6uy">
+    <script>
+      var head = document.head;
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src =
+        'https://t.plinthsny.com/v1/lst/universal-script?ph=ec8b190bff1954e67156656a8053268832f885bf8261e96c411fa325bc55a599&tag=!clicked&origin=SHOPIFY&ref_url=' +
+        encodeURI(document.URL);
+      head.appendChild(script);
+    </script>
+
     <meta charset="utf-8">
-  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="{{ settings.mob_browser }}">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="canonical" href="{{ canonical_url }}">
-  	<link rel="dns-prefetch" href="https://{{shop.domain}}" crossorigin>
-    <link rel="dns-prefetch" href="https://{{shop.permanent_domain}}" crossorigin>
-    <link rel="dns-prefetch" href="https://cdn.shopify.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.shopifycdn.com" crossorigin>
-  	<link rel="preconnect" href="https//fonts.shopifycdn.com/" crossorigin>
-    <link rel="preconnect" href="https//cdn.shopify.com" crossorigin>
-  	<link rel="preconnect" href="https//ajax.googleapis.com">
-  
-  	{% if settings.rtl %}
-    	<link rel="preload" as="style" href="{{ 'themeRtl.css' | asset_url }}">
-  	{% else %}
-  		<link rel="preload" as="style" href="{{ 'theme.css' | asset_url }}">
-  	{% endif %}
-  
-    {%- if settings.favicon != blank -%}<link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">{%- endif -%}
-    {%- if settings.favicon_retina != blank -%}<link rel="apple-touch-icon-precomposed" type="image/png" sizes="152x152" href="{{ settings.favicon_retina | img_url: '152x' }}">{%- endif -%}
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=5.0"
+    >
 
-  	{%- capture seo_title -%}
-      {%- if request.page_type == 'search' and search.performed == true -%}
-        {{ 'general.search.heading' | t: count: search.results_count }}: {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+    <title>
+      {% if page_title == blank -%}
+        {{- shop.name -}}
       {%- else -%}
-        {{ page_title }}
+        {{- page_title -}}
+        {%- if current_page != 1 %} &ndash; {{ 'general.page' | t: page: current_page }}{% endif -%}
+      {%- endif %}
+    </title>
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {%- if settings.favicon -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 96 }}">
+      <link rel="apple-touch-icon" href="{{ settings.favicon | image_url: width: 180 }}">
+    {%- endif -%}
+
+    {%- comment -%}Few prefetch to increase performance on commonly used third-parties{%- endcomment -%}
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+
+    {%- unless settings.heading_font.system? -%}
+      <link rel="preload" href="{{ settings.heading_font | font_url }}" as="font" type="font/woff2" crossorigin>
+    {%- endunless -%}
+
+    {%- unless settings.text_font.system? -%}
+      <link rel="preload" href="{{ settings.text_font | font_url }}" as="font" type="font/woff2" crossorigin>
+    {%- endunless -%}
+
+    {%- render 'social-meta-tags' -%}
+    {%- render 'microdata-schema' -%}
+    {%- render 'css-variables' -%}
+    {%- render 'js-variables' -%}
+
+    {%- if request.page_type == 'gift_card' -%}
+      <script src="{{ 'vendor/qrcode.js' | shopify_asset_url }}" defer></script>
+    {%- endif -%}
+
+    <script>
+      if (!(HTMLScriptElement.supports && HTMLScriptElement.supports('importmap'))) {
+        const importMapPolyfill = document.createElement('script');
+        importMapPolyfill.async = true;
+        importMapPolyfill.src = "{{ 'es-module-shims.min.js' | asset_url }}";
+
+        document.head.appendChild(importMapPolyfill);
+      }
+    </script>
+    <script type="importmap">
+      {%- comment -%}On Safari 16.3 and lower, a polyfill is used to load importmap{%- endcomment -%}
+      {
+        "imports": {
+          "vendor": "{{ 'vendor.min.js' | asset_url }}",
+          "theme": "{{ 'theme.js' | asset_url }}",
+          "photoswipe": "{{ 'photoswipe.min.js' | asset_url }}"
+        }
+      }
+    </script>
+
+    <script type="module" src="{{ 'vendor.min.js' | asset_url }}"></script>
+    <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
+
+    <script rel="preload" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer="defer"></script>
+    <link
+      rel="preload"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    >
+    <noscript>
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    </noscript>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer="defer"></script>
+    <link rel="preload" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" as="script">
+
+    {%- if tinyscript -%}{{ content_for_header }}{%- else -%}{% render 'tiny-script-control' %}{%- endif -%}
+
+    {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
+    <style>
+  @media (max-width: 999px) {
+    .template--new-product .product-gallery__image-list .product-gallery__media > * {
+      aspect-ratio: unset !important;  /* Prevent forced 1:1 aspect ratio */
+      width: 100% !important;
+      height: auto !important;
+      object-fit: contain !important;  /* Maintain original aspect ratio */
+    }
+  }
+  .product-gallery__media > * {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+</style>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16650087679"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16650087679');
+</script>
+
+  </head>
+
+  {% liquid
+    assign features_class = ''
+
+    if settings.show_button_transition
+      assign features_class = features_class | append: 'features--button-transition '
+    endif
+
+    if settings.show_image_zoom_on_hover
+      assign features_class = features_class | append: 'features--zoom-image '
+    endif
+
+    if settings.show_page_transition
+      assign features_class = features_class | append: 'features--page-transition '
+    endif
+  %}
+
+  <body class="{{ features_class }} color-scheme color-scheme--{{ settings.default_color_scheme.id }} template--{{template.suffix}}">
+    {%- render 'shadow-dom-templates' -%}
+
+    <loading-bar class="loading-bar" aria-hidden="true"></loading-bar>
+    <a href="#main" allow-hash-change class="skip-to-content sr-only">
+      {{- 'general.accessibility.skip_to_content' | t -}}
+    </a>
+
+    <span
+      id="header-scroll-tracker"
+      style="position: absolute; width: 1px; height: 1px; top: var(--header-scroll-tracker-offset, 10px); left: 0;"
+    >
+      {%- comment -%}
+        This allows our theme to track when the user has scrolled a given amount of pixels, without relying on a global scroll listener. This helps
+        to improve performance and reduce reflows.
+      {%- endcomment -%}
+    </span>
+
+    {%- if request.page_type != 'password' -%}
+      {%- sections 'header-group' -%}
+      {%- sections 'overlay-group' -%}
+    {%- endif -%}
+
+    <main id="main" class="anchor">
+      {{ content_for_layout }}
+
+      {%- comment -%}
+        IMPLEMENTATION NOTE: For best semantics, having the footer group outside the main would be slightly better, but
+          moving it inside the main allows to have all the sections (including sections inside the footer group) to be
+          consecutive, and hence having a cleaner margin collapsing management.
+      {%- endcomment -%}
+      {%- if request.page_type != 'password' -%}
+        {%- sections 'footer-group' -%}
       {%- endif -%}
-      {%- if current_tags -%}{%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}{%- endif -%}
-      {%- if current_page != 1 -%} &ndash; {{ 'general.meta.page' | t: page: current_page }}{%- endif -%}
-      {%- assign escaped_page_title = page_title | escape -%}
-      {%- unless escaped_page_title contains shop.name -%}&ndash; {{ shop.name }}{%- endunless -%}
-    {%- endcapture -%}
-    <title>{{ seo_title | strip }}</title>
-  	{%- if page_description -%}<meta name="description" content="{{ page_description | escape }}">{%- endif -%}
-  	{%- render 'social-meta-tags' -%}
-  {%- endcapture -%}
-  {{metaTags  }}
+    </main>
+    {{ 'tiny-img-link-preloader.js' | asset_url | preload_tag: as: 'script' }}
+    <script type="text/javascript">
+      window._mfq = window._mfq || [];
+      (function () {
+        var mf = document.createElement('script');
+        mf.type = 'text/javascript';
+        mf.defer = true;
+        mf.src = '//cdn.mouseflow.com/projects/bfd48f19-157b-40be-9166-c0ad5bc45278.js';
+        document.getElementsByTagName('head')[0].appendChild(mf);
+      })();
+    </script>
 
-  {%- capture mainjs -%}
-  	{%- render 'head-css' -%}
-  	{% if settings.rtl %}
-    	<link rel="stylesheet" href="{{ 'themeRtl.css' | asset_url }}" type="text/css" media="all">
-  	{% else %}
-  		<link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" media="all">
-  	{% endif %}
-  	<link rel="preload" href="{{ 'jquery.min.js' | asset_url }}" as="script">
-  	<link rel="preload" href="{{ 'vendor.min.js' | asset_url }}" as="script">
-  	<script src="{{ 'jquery.min.js' | asset_url }}"defer="defer"></script>
-	<script>
-		var theme = {
-			strings:{
-				addToCart:{{ 'products.product.add_to_cart' | t | json }},soldOut:{{ 'products.product.sold_out' | t | json }},unavailable:{{ 'products.product.unavailable' | t | json }},showMore:{{ 'general.filters.show_more' | t | json }},showLess:{{ 'general.filters.show_less' | t | json }}
-			},
-			mlcurrency:{%- if settings.show_multiple_currencies and settings.currency_opt == 'script' -%}true{%- else -%}false{% endif %},moneyFormat:{{ shop.money_format | json }},currencyFormat:{{ settings.currency_format | json }},shopCurrency:{{ shop.currency | json }},autoCurrencies:{{ settings.auto_currencies }},money_currency_format:{{ shop.money_with_currency_format | strip_html | json }},money_format:{{ shop.money_format | strip_html | json }},
-			ajax_cart:{{settings.ajax_cart }},fixedHeader:{{settings.show_sticky_header }},animation:{{settings.enable_site_animation }},animationMobile:{{settings.site_animation_mobile }},searchresult:{{ 'general.search.all' | t | json }},wlAvailable:{{ 'products.wishlist.available' | t | json }},rtl:{{ settings.rtl }},days:{{ 'date_formats.short_names.days' | t | json }},hours:{{ 'date_formats.short_names.hours' | t | json }},minuts:{{ 'date_formats.short_names.minuts' | t | json }},seconds:{{ 'date_formats.short_names.seconds' | t | json }},
-		};
-		document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-		var Metatheme = {{shop.metafields.mytheme.Avone |json}},thm = 'Avone', shpeml = '{{shop.email}}', dmn = window.location.hostname;
-        window.lazySizesConfig = window.lazySizesConfig || {};
-		window.lazySizesConfig.loadMode = 1;
-		window.lazySizesConfig.expand = 10;
-		window.lazySizesConfig.expFactor = 1.5;
-      	window.lazySizesConfig.loadHidden = false;
-	</script>
-	<script src="{{ 'vendor.min.js' | asset_url }}" defer="defer"></script>
-  {%- endcapture -%}
-  {{mainjs | strip_newlines | remove: "	" }}
-  
-  {%- comment -%}{{ content_for_header }}{%- endcomment -%}
-  {%- render 'header-content' -%}
-  
-  {%- if settings.show_language -%}
-	{%- include 'weglot_hreftags' -%}
-	{%- include 'weglot_switcher' -%}
-  {%- endif -%}
-</head>
-<body id="{{ page_title | handle }}" class="template-{{ template | split: '.' | first }} {%- if settings.rtl -%}rtl {%- endif -%}lazyload page_{{ page.handle }}"
-	{%- if settings.bodybg_img %} data-bgset="{% include 'bgset', image: settings.bodybg_img %}" data-sizes="auto" data-parent-fit="cover" style="background-image:url('{{ settings.bodybg_img | img_url: '50x50' }});"{%- endif -%}>
-	{%- if settings.enable_age_varification -%}{% render 'age-check' %}{%- endif -%}
-    {%- if settings.layout_style == "boxedlayout" -%}<div class="page-wrapper layout-boxed">{%- endif -%}
-  		{%- include 'header' -%}
-    	{%- if settings.top-information-bar -%}{% section 'top-info-panel' %}{%- endif -%}
-		<main id="PageContainer" class="main-content {{ template | split: '.' | first }}" id="MainContent" role="main">{{ content_for_layout }}</main>
-    	{%- section 'footer' -%}
-  	{% if settings.layout_style == "boxedlayout" %}</div>{% endif %}
-	{% section 'custom-colors' %}
+    <script type="text/javascript">
+      var _learnq = _learnq || [];
 
-<!-- js -->
-<script src="{{ 'option_selection.js' | shopify_asset_url }}" defer="defer"></script>
-{%- if template.directory == 'customers' -%}<script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>{%- endif -%}
-{%- if content_for_layout contains 'data-stellar-background-ratio' -%}<script src="{{ 'stellar.js' | asset_url }}" defer></script>{%- endif -%}
-{%- if content_for_layout contains 'grid-masonary' -%}<script src="{{ 'masonry.js' | asset_url }}" defer="defer"></script>{%- endif -%}
-{%- if settings.show_multiple_currencies and settings.currency_opt == 'script' -%}{%- render 'currencies' -%}{%- endif -%}
-{%- if settings.enable_site_animation -%}<script src="{{ 'wow.min.js' | asset_url }}" async></script>{%- endif -%}
-<script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-	const productGrid = document.querySelector('.new_product_slider');
-	if (productGrid) {
-		// Initialize the slick slider
-		$(productGrid).slick({
-			slidesToShow: 4,
-			slidesToScroll: 1,
-			autoplay: false,
-			arrows: true,
-			dots: false,
-			responsive: [
-				{
-					breakpoint: 1024,
-					settings: { slidesToShow: 3 }
-				},
-				{
-					breakpoint: 768,
-					settings: { slidesToShow: 2 }
-				}
-			]
-		});
-	}
-});
-</script>
-{% if template.name == 'product' %}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function() {
-	$(".stickyCart .qtyBtn").on("click", function() {
-			var qtyField = $("#quantity"),
-				oldValue = $(qtyField).val(),
-				newVal = 1;
-				$(this).is(".plus") ? newVal = parseInt(oldValue) + 1 : oldValue > 1 && (newVal = parseInt(oldValue) - 1), jQuery(qtyField).val(newVal).trigger("change")
-		}), $("#quantity").on("change", function() {
-			$("#quantity1").val($(this).val())
-		});
-$(".product-action .qtyBtn").on("click", function() {
-			var qtyField1 = $("#quantity1"),
-				oldValue1 = $(qtyField1).val(),
-				newVal1 = 1;
-				$(this).is(".plus") ? newVal1 = parseInt(oldValue1) + 1 : oldValue1 > 1 && (newVal1 = parseInt(oldValue1) - 1), jQuery(qtyField1).val(newVal1).trigger("change")
-		}), $("#quantity1").on("change", function() {
-			$("#quantity").val(jQuery(this).val())
-		})
-});
-</script>
-{% endif %}
-{%- render 'theme-modals' -%}
-{%- if settings.show_sticky_arrow -%}<span id="site-scroll"><i class="ad ad-arw-up" aria-hidden="true"></i></span>{%- endif -%}
-<script src="{{ 'script-loader.js' | asset_url }}" defer></script>
-{{ 'custom.css' | asset_url | stylesheet_tag }}
+      _learnq.push(['account', SjTHa7]);
 
-</body>
+      (function () {
+        var b = document.createElement('script');
+        b.type = 'text/javascript';
+        b.async = true;
+        b.src =
+          ('https:' == document.location.protocol ? 'https://' : 'http://') +
+          'a.klaviyo.com/media/js/analytics/analytics.js';
+        var a = document.getElementsByTagName('script')[0];
+        a.parentNode.insertBefore(b, a);
+      })();
+    </script>
+
+    <script>
+      window.addEventListener('load', function () {
+        var _learnq = window._learnq || [];
+        function addedToCart() {
+          fetch(`${window.location.origin}/cart.js`).then((res) =>
+            res
+              .clone()
+              .json()
+              .then((data) => {
+                var cart = {
+                  total_price: data.total_price / 100,
+                  $value: data.total_price / 100,
+                  total_discount: data.total_discount,
+                  original_total_price: data.original_total_price / 100,
+                  items: data.items,
+                };
+                if (item !== 'undefined') {
+                  cart = Object.assign(cart, item);
+                }
+                if (klAjax) {
+                  _learnq.push(['track', 'Added to Cart', cart]);
+                  klAjax = false;
+                }
+              })
+          );
+        }
+        (function (ns, fetch) {
+          ns.fetch = function () {
+            const response = fetch.apply(this, arguments);
+            response.then((res) => {
+              if (`${window.location.origin}/cart/add.js`.includes(res.url)) {
+                addedToCart();
+              }
+            });
+            return response;
+          };
+        })(window, window.fetch);
+        var klAjax = true;
+        var atcButtons = document.querySelectorAll("form[action*='/cart/add'] button[type='submit']");
+        for (var i = 0; i < atcButtons.length; i++) {
+          atcButtons[i].addEventListener('click', function () {
+            if (klAjax) {
+              _learnq.push(['track', 'Added to Cart', item]);
+              klAjax = false;
+            }
+          });
+        }
+      });
+    </script>
+  </body>
 </html>
+

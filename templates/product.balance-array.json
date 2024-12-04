@@ -1,0 +1,187 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "zp-product-header-content": {
+      "type": "product-header-content-zipifypages",
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h1"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {
+          }
+        },
+        "text_DqgQ49": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Discover the epitome of elegance with \"Balance Array\" plinths from Plinths New York. These exquisite acrylic masterpieces redefine sophistication, enhancing the allure of any event. Impeccably crafted, the Balance Array offers a perfect blend of style and durability, ensuring your space exudes an aura of timeless charm and refined beauty.<\/p>"
+          }
+        },
+        "text_tfqkJQ": {
+          "type": "text",
+          "settings": {
+            "text": "<h6>10 PIECES INCLUDED <\/h6>"
+          }
+        },
+        "separator_Ldp6Vf": {
+          "type": "separator",
+          "settings": {
+          }
+        },
+        "product_variations_miqfJ7": {
+          "type": "product_variations",
+          "settings": {
+            "option_name": "",
+            "option_value_metafield": "",
+            "products": [
+
+            ],
+            "color_selector_type": "color"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_type": "block",
+            "color_selector_type": "color",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "accordion_fJeWeq": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "picto-star",
+            "title": "<strong>DESCRIPTION (INCHES)<\/strong>",
+            "content": "<p>1. 12\" x 12\" x 1\" <\/p><p>2. 16\" x 12\" x 4\"<\/p><p>3. 16\" x 12\" x 4\" <\/p><p>4. 12\" x 12\" x 6\"<\/p><p>5. 12\" x 12\" x 6\" <\/p><p>6. 12\" x 12\" x 10\"<\/p><p>7. 12\" x 12\" x 10\" <\/p><p>8. 12\" x 12\" x 12\"<\/p><p>9. 12\" x 12\" x 12\" <\/p><p>10. 24\" x 12\" x 6\"<\/p>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "complementary_products": {
+          "type": "complementary_products",
+          "settings": {
+            "title": "Pairs well with",
+            "products_count": 2,
+            "show_below_gallery": true,
+            "stack_products": false,
+            "show_quick_buy": true
+          }
+        },
+        "offers_fq7Ucb": {
+          "type": "offers",
+          "disabled": true,
+          "settings": {
+            "stack_offers": true,
+            "offer_1_title": "DIMENSIONS",
+            "offer_1_content": "<h6>30X30X30CM<\/h6><p><\/p>",
+            "offer_2_title": "DIMENSIONS INCHES",
+            "offer_2_content": "<h6>30X30X30<\/h6>",
+            "offer_3_title": "",
+            "offer_3_content": "",
+            "background": "",
+            "text_color": "",
+            "border_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "payment_terms",
+        "text_DqgQ49",
+        "text_tfqkJQ",
+        "separator_Ldp6Vf",
+        "product_variations_miqfJ7",
+        "variant_picker",
+        "quantity_selector",
+        "accordion_fJeWeq",
+        "buy_buttons",
+        "complementary_products",
+        "offers_fq7Ucb"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "container_size": "lg",
+        "product_info_size": 35,
+        "show_sticky_add_to_cart": true,
+        "center_basic_info": false,
+        "desktop_media_layout": "grid",
+        "desktop_media_grid_gap": 30,
+        "mobile_controls": "dots",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "recommendations_count": 10,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "",
+        "title": "Related products",
+        "content": ""
+      }
+    },
+    "zp-product-footer-content": {
+      "type": "product-footer-content-zipifypages",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "zp-product-header-content",
+    "main",
+    "related-products",
+    "zp-product-footer-content"
+  ]
+}
