@@ -1,0 +1,50 @@
+<div class="social-sharing">
+  
+  {% if sharing_lbl != blank %}<span class="lbl">{{settings.sharing_lbl}}</span>{% endif %}
+  
+  {% if settings.share_facebook %}
+  <a href="//www.facebook.com/sharer.php?u={{ shop.url | append: share_permalink }}" class="btn--share share-facebook" title="{{ 'general.social.alt_text.share_on_facebook' | t }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=380,width=660');return false;">
+    <i class="ad ad-facebook-f" aria-hidden="true"></i> <span class="share-title" aria-hidden="true">{{ 'general.social.share_on_facebook' | t }}</span>
+  </a>
+  {% endif %}
+
+  {% if settings.share_twitter %}
+    <a class="social-icons__link btn--share share-twitter" href="{{ settings.social_twitter_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Twitter' }}" target="_blank">
+    
+<svg  class="ad ad-twitter" width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M5.85605 0.5H0.956055L6.73805 8.2098L1.27105 14.5H3.12605L7.59765 9.3557L11.4561 14.5H16.3561L10.3305 6.4654L15.5161 0.5H13.6611L9.47085 5.3202L5.85605 0.5ZM12.1561 13.1L3.75605 1.9H5.15605L13.5561 13.1H12.1561Z" fill="#3D4936"/>
+  </svg>
+  <span class="share-title">Tweet</span> </a>
+  {% endif %}
+  {% if settings.share_insta %}
+		<a class="social-icons__link btn--share share-instagram" href="{{ settings.social_instagram_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}" target="_blank">
+	    
+<svg class="ad ad-instagram" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M7.42131 3.91058C5.41668 3.91058 3.79974 5.51317 3.79974 7.5C3.79974 9.48683 5.41668 11.0894 7.42131 11.0894C9.42594 11.0894 11.0429 9.48683 11.0429 7.5C11.0429 5.51317 9.42594 3.91058 7.42131 3.91058ZM7.42131 9.83359C6.12587 9.83359 5.06682 8.78707 5.06682 7.5C5.06682 6.21293 6.12271 5.16641 7.42131 5.16641C8.71991 5.16641 9.7758 6.21293 9.7758 7.5C9.7758 8.78707 8.71675 9.83359 7.42131 9.83359ZM12.0357 3.76375C12.0357 4.22922 11.6575 4.60097 11.191 4.60097C10.7214 4.60097 10.3463 4.2261 10.3463 3.76375C10.3463 3.30141 10.7245 2.92653 11.191 2.92653C11.6575 2.92653 12.0357 3.30141 12.0357 3.76375ZM14.4344 4.61347C14.3808 3.49197 14.1223 2.49855 13.2934 1.68007C12.4676 0.861598 11.4652 0.605433 10.3337 0.549202C9.16748 0.483599 5.67199 0.483599 4.50577 0.549202C3.37738 0.602309 2.37507 0.858474 1.54611 1.67695C0.717153 2.49543 0.461846 3.48884 0.405112 4.61034C0.338921 5.76621 0.338921 9.23067 0.405112 10.3865C0.458694 11.508 0.717153 12.5015 1.54611 13.3199C2.37507 14.1384 3.37423 14.3946 4.50577 14.4508C5.67199 14.5164 9.16748 14.5164 10.3337 14.4508C11.4652 14.3977 12.4676 14.1415 13.2934 13.3199C14.1192 12.5015 14.3776 11.508 14.4344 10.3865C14.5005 9.23067 14.5005 5.76933 14.4344 4.61347ZM12.9277 11.6267C12.6819 12.239 12.2059 12.7108 11.585 12.9575C10.6552 13.3231 8.44884 13.2387 7.42131 13.2387C6.39378 13.2387 4.18428 13.3199 3.25761 12.9575C2.63983 12.7139 2.16389 12.2422 1.91489 11.6267C1.54611 10.7052 1.63121 8.51841 1.63121 7.5C1.63121 6.48159 1.54926 4.2917 1.91489 3.37326C2.16074 2.76096 2.63668 2.28924 3.25761 2.04245C4.18743 1.67695 6.39378 1.7613 7.42131 1.7613C8.44884 1.7613 10.6583 1.68007 11.585 2.04245C12.2028 2.28612 12.6787 2.75784 12.9277 3.37326C13.2965 4.29482 13.2114 6.48159 13.2114 7.5C13.2114 8.51841 13.2965 10.7083 12.9277 11.6267Z" fill="#3D4936"/>
+  </svg>
+  <span class="share-title">Instagram</span> </a>
+	{%- endif -%}
+  {% if settings.share_pinterest %}
+  <a href="//pinterest.com/pin/create/button/?url={{ shop.url | append: share_permalink }}&amp;media={{ share_image | img_url: '1024x1024' }}&amp;description={{ share_title | url_param_escape }}" class="btn--share share-pinterest" title="{{ 'general.social.alt_text.share_on_pinterest' | t }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=380,width=660');return false;">
+    <i class="ad ad-pinterest-p" aria-hidden="true"></i> <span class="share-title" aria-hidden="true">{{ 'general.social.share_on_pinterest' | t }}</span>
+  </a>
+  {% endif %}
+  
+  {% if settings.share_linkedin %}
+  <a href="http://www.linkedin.com/shareArticle?mini=true&url={{ shop.url | append: share_permalink }}&title={{ share_title | url_param_escape }}&source={{ shop.name }}" class="btn--share share-pinterest" title="{{ 'general.social.alt_text.share_on_linkedin' | t }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=380,width=660');return false;">
+    <i class="ad ad-linkedin-in" aria-hidden="true"></i> <span class="share-title" aria-hidden="true">{{ 'general.social.share_on_linkedin' | t }}</span>
+  </a>
+  {% endif %}
+  
+  {% if settings.share_whatsapp %}
+  <a href="whatsapp://send?text={{ shop.url | append: share_permalink }}" class="btn--share share-whatsapp large-up--hide" title="{{ 'general.social.alt_text.share_on_whatsapp' | t }}" target="_blank">
+    <i class="ad ad-whatsapp"></i> <span class="share-title" aria-hidden="true">{{ 'general.social.share_on_whatsapp' | t }}</span>
+  </a>
+  {% endif %}
+  
+  {% if settings.share_email %}
+  <a href="mailto:?subject=Check this {{ shop.url | append: share_permalink }}" class="btn--share share-pinterest" title="{{ 'general.social.alt_text.share_on_email' | t }}" target="_blank">
+    <i class="ad ad-envelope-l"></i> <span class="share-title" aria-hidden="true">{{ 'general.social.share_on_email' | t }}</span>
+  </a>
+  {% endif %}
+</div>

@@ -1,0 +1,28 @@
+{%- if settings.breadcrumb_pg -%}{%- include 'breadcrumb' -%}{%- else -%}<div class="topSpace"></div>{%- endif -%}
+<div class="page_herbal">
+  <div class="page-width"><h2 class="page-title">{{ page.title }}</h2></div>
+  {% section 'richtext' %}
+  {% section 'logo-bar' %}
+</div>
+<style>
+.page_herbal .section-cover.id-richtext {
+    padding: 0;
+}
+.page_herbal #shopify-section-richtext .content-indent.default {
+    margin-top: 0;
+}
+.page_herbal .wrap-block p {
+    font-weight: 500 !important;
+    line-height: 26px !important;
+    letter-spacing: 0.48px !important;
+    text-transform: capitalize;
+}
+.page_herbal .section-cover.id-richtext .wrap-block {
+    padding: 0 20px;
+}
+@media only screen and (max-width: 766px) {
+.page_herbal .wrap-block .simple-text p,.page_herbal .wrap-block .simple-text{
+    font-size: 14px;
+    letter-spacing: 0.42px !important;
+}
+</style>

@@ -1,0 +1,157 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "default-page",
+      "settings": {}
+    },
+    "richtext_hKN7GA": {
+      "type": "richtext",
+      "settings": {
+        "fullwidth": false,
+        "top-offeset": "none",
+        "title": "",
+        "ttl-text-size": 48,
+        "richtxt": "<p>Welcome to Roots and Muds, where nature meets nurture in every product we create. We believe that self-care should be a ritual, a moment of connection with the earth and a celebration of simplicity.<\/p>",
+        "text-size": 16,
+        "btntxt": "",
+        "btnurl": "",
+        "btn-size-desk": "btn-sm",
+        "btn-size-mob": "mob-btn-sm",
+        "max-width": 100,
+        "sec_bg_clr": "#ffffff",
+        "text_clr": "#3d4936"
+      }
+    },
+    "feature_row_LwrybK": {
+      "type": "feature-row",
+      "blocks": {
+        "image_with_text_agxQ7m": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_16.png",
+            "layout": "left",
+            "title": "Our Story",
+            "text": "<p>Roots and Muds was born from a deep love for the natural world and a desire to share its benefits with others. Our journey started in the heart of serene gardens and ancient forests, where we discovered the power of botanicals and the wisdom of traditional remedies.<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "btn-size-desk": "btn-sm",
+            "btn-size-mob": "mob-btn-sm",
+            "text_align": "text-left",
+            "text_clr": "#3d4936",
+            "text_bg_clr": "#ffffff",
+            "button_bg_clr": "#000000",
+            "button_bdr_clr": "#000000",
+            "button_text_clr": "#ffffff"
+          }
+        },
+        "image_with_text_tmdEFB": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_17.png",
+            "layout": "right",
+            "title": "Crafted With Care",
+            "text": "<p>Each product in our collection is carefully handcrafted with a commitment to quality and authenticity. We select only the finest, ethically sourced ingredients to ensure that every soap, lip balm, and massage oil delivers a truly indulgent experience.<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "btn-size-desk": "btn-sm",
+            "btn-size-mob": "mob-btn-sm",
+            "text_align": "text-left",
+            "text_clr": "#3d4936",
+            "text_bg_clr": "#ffffff",
+            "button_bg_clr": "#000000",
+            "button_bdr_clr": "#000000",
+            "button_text_clr": "#ffffff"
+          }
+        },
+        "image_with_text_E4yBmk": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_18.png",
+            "layout": "left",
+            "title": "The power of nature",
+            "text": "<p>We harness the nourishing properties of roots, plants, and earth's purest elements to create formulations that rejuvenate both body and spirit. From our soothing soaps to our luscious lip balms and indulgent massage oils, every product is a testament to the incredible gifts nature provides.<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "btn-size-desk": "btn-sm",
+            "btn-size-mob": "mob-btn-sm",
+            "text_align": "text-left",
+            "text_clr": "#3d4936",
+            "text_bg_clr": "#ffffff",
+            "button_bg_clr": "#000000",
+            "button_bdr_clr": "#000000",
+            "button_text_clr": "#ffffff"
+          }
+        },
+        "image_with_text_bmKYfL": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_19.png",
+            "layout": "right",
+            "title": "Sustainability And Ethnics",
+            "text": "<p>At Roots and Muds, we take our responsibility to the planet seriously. Our packaging is eco-friendly, and we strive to minimize our environmental footprint at every step of the production process. We believe that by caring for the earth, we can create a more beautiful world for all.<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "btn-size-desk": "btn-sm",
+            "btn-size-mob": "mob-btn-sm",
+            "text_align": "text-left",
+            "text_clr": "#3d4936",
+            "text_bg_clr": "#ffffff",
+            "button_bg_clr": "#000000",
+            "button_bdr_clr": "#000000",
+            "button_text_clr": "#ffffff"
+          }
+        },
+        "image_with_text_j9ErH7": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_20.png",
+            "layout": "left",
+            "title": "Connect With Us",
+            "text": "<p>We cherish the relationship we have with our customers. Whether you have a question about our products or just want to share your experience, we'd love to hear from you. Join our community on social media and be a part of our journey towards a more nurturing, sustainable future.<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "btn-size-desk": "btn-sm",
+            "btn-size-mob": "mob-btn-sm",
+            "text_align": "text-left",
+            "text_clr": "#3d4936",
+            "text_bg_clr": "#ffffff",
+            "button_bg_clr": "#000000",
+            "button_bdr_clr": "#000000",
+            "button_text_clr": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_agxQ7m",
+        "image_with_text_tmdEFB",
+        "image_with_text_E4yBmk",
+        "image_with_text_bmKYfL",
+        "image_with_text_j9ErH7"
+      ],
+      "settings": {
+        "custom_class": "about_us",
+        "custom_arrow": false,
+        "top-offeset": "default",
+        "section_width": false,
+        "section_cov": false,
+        "sec_bg_clr": "#ffffff",
+        "snow_effect": false,
+        "snow_style": "style1"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "richtext_hKN7GA",
+    "feature_row_LwrybK"
+  ]
+}

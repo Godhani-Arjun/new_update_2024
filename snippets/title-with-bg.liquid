@@ -1,0 +1,70 @@
+{% comment %}
+
+if you want to use this snippets please add this code to your page schema
+
+    {
+        "type":"image_picker",
+        "id":"title_bg_image",
+        "label":"Title Background Image"			
+    },
+
+and after select background image in your theme customize 
+and put this "{%- render 'title-with-bg' -%}" where you render your title with background
+
+{% endcomment %}
+
+
+
+<div class="title_with_bg">
+    <img src="{{section.settings.title_bg_image | image_url}}" alt="" height="" width="" />
+    <h1 class="page-title">
+        {% if page.title %}{{ page.title }}{% elsif collection.title %} {{ collection.title }}{% elsif blog.title %}{{ blog.title }}{% endif %}
+    </h1>
+</div>
+{% style %}
+    .title_with_bg {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 50px;
+        position: relative;
+        height: 100%;
+        max-height: 354px;
+        overflow: hidden;
+    }
+
+    .title_with_bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .title_with_bg .page-title {
+        margin: 0;
+        font-family: 'Gilda Display';
+        line-height: 62.4px;
+        position: absolute;
+        left: 19%;
+    }
+
+    @media only screen and (max-width:1080px) {
+        .title_with_bg {
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .title_with_bg img {
+            height: auto;
+        }
+        
+        .title_with_bg .page-title {
+            left: unset;
+        }
+    }
+
+    @media only screen and (max-width:766px) {
+        .title_with_bg .page-title {
+            font-size: 28px;
+        }
+    }
+{% endstyle %}

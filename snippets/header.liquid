@@ -1,0 +1,223 @@
+{%- capture navigation -%}{% section 'navigation' %}{%- endcapture -%}
+{%- if navigation contains '<!--mmobile-->' -%}{% assign endiv = '</div>'  %}{%- endif -%}
+{%- assign desktopnav = navigation | split: '<!--mmobile-->' | first | append: endiv  -%}
+{%- assign mobilenav = navigation | split: '<!--mmobile-->' | last | split: '<!--mmobileend -->' | first   -%}
+{%- capture siteHeader -%}
+{% if settings.snow_effect %}<div class="snow-wrap falling-snow{% if settings.snow_style == "style2" %} style2{% else %} style1{% endif %}">{% endif %}
+
+{%- comment -%}*** Top Announcement ***{%- endcomment -%}
+{%- if settings.announcement -%}
+<div class="notification-bar{% if settings.announcement_mb %} small--hide{% endif %}">
+	{%- if settings.announcement_link != blank -%}
+		<a href="{{ settings.announcement_link }}" class="notification-bar__message">{{ settings.announcement_txt }}</a>
+	{%- else -%}
+		<span class="notification-bar__message">{{ settings.announcement_txt }}</span>
+	{%- endif -%}
+	<span class="close-announcement"><i class="ad ad-times-l" aria-hidden="true"></i></span>
+</div>
+{%- endif -%}
+
+{% comment %}*** Top Bar ***{% endcomment %}
+{% assign topheaderMb = '' %}
+{%- if settings.leftTxt-mobile and settings.centerTxt-mobile and settings.rightTxt-mobile -%}
+	{% assign topheaderMb = 'small--hide medium--hide' %}
+{%- endif -%}
+{%- if settings.topbar -%}
+<div class="top-header-wrapper">
+	<div class="top-header{% unless settings.topbar_fullwidth %} page-width{% endunless %} {{topheaderMb}}">
+		{%- if settings.leftTxt != blank -%}
+			<div class="header-txt left-hdr{% if settings.leftTxt-mobile %} small--hide medium--hide{% else %} small--text-center{% endif %}">
+				{%- if settings.leftTxt contains "[social-icons]"-%}
+					{%- assign topLeftTxt = settings.leftTxt | split: "[social-icons]" -%}
+					{{topLeftTxt[0]}} {% render 'social-media' %} {{topLeftTxt[1]}}
+				{%- else -%}
+					{{ settings.leftTxt }}
+				{%- endif -%}
+			</div>
+		{%- endif -%}
+		{%- if settings.centerTxt != blank -%}
+			<div class="header-txt middle-hdr text-center{% if settings.centerTxt-mobile %} small--hide medium--hide{% endif %}">{{ settings.centerTxt }}</div>
+		{%- endif -%}
+		{%- if settings.rightTxt != blank -%}
+			<div class="header-social right-hdr text-right{% if settings.rightTxt-mobile %} small--hide medium--hide{% else %} small--text-center{% endif %}">
+				{%- if settings.rightTxt contains "[social-icons]"-%}
+					{% assign topRightTxt = settings.rightTxt | split: "[social-icons]" %}
+					{{topRightTxt[0]}} {% render 'social-media' %} {{topRightTxt[1]}}
+				{%- else -%}
+					{{settings.rightTxt}}
+				{%- endif -%}
+			</div>
+		{%- endif -%}
+	</div>
+</div>
+{%- endif -%}
+
+{% comment %}*** Main Header ***{% endcomment %}
+{%- capture logo -%}
+  	{%- capture logoWidth -%}{{ settings.logo_width | escape }}x{%- endcapture -%}
+	<{% if template == 'index'%}h1 {% else %}div {% endif %}class="header-logo">
+		<a href="{{ routes.root_url }}" class="header-logo-link">
+			{%- if settings.home_classic and template == 'index' and settings.logo_cl != blank -%}
+				<img src="{{ settings.logo_cl | img_url: logoWidth }}" class="cllogo" alt="{{ settings.logo_cl.alt | default: shop.name }}" srcset="{{ settings.logo_cl | img_url: logoWidth, scale: 2 }} 1x, {{ settings.logo_cl | img_url: logoWidth, scale: 4 }} 1.1x">
+                {%- if settings.logosvg != blank -%}
+              		{{settings.logosvg | replace: '<svg', '<svg class="stlogo"' }}
+          		{%- else settings.logo != blank -%}
+                    <img src="{{ settings.logo | img_url: logoWidth }}" class="stlogo" alt="{{ settings.logo.alt | default: shop.name }}" srcset="{{ settings.logo | img_url: logoWidth, scale: 2 }} 1x, {{ settings.logo | img_url: logoWidth, scale: 4 }} 1.1x">
+                {%- endif -%}
+			{%- elsif settings.logosvg != blank -%}
+				{{settings.logosvg }}
+          	{%- elsif settings.logo != blank -%}
+				<img src="{{ settings.logo | img_url: logoWidth }}" alt="{{ settings.logo.alt | default: shop.name }}" srcset="{{ settings.logo | img_url: logoWidth, scale: 1 }} 1x, {{ settings.logo | img_url: logoWidth, scale: 2 }} 2x">
+			{%- else -%}
+				{{ shop.name }}
+			{%- endif -%}
+			<span class="visually-hidden">{{ shop.name }}</span>
+		</a>
+	</{% if template == 'index'%}h1{% else %}div{% endif %}>
+{%- endcapture -%}
+{%- capture textblock -%}
+	{%- if settings.hdTxt-block contains "[social-icons]"-%}
+		{%- assign headerTxt = settings.hdTxt-block | split: "[social-icons]" -%}
+		{{headerTxt[0]}} {% render 'social-media' %} {{headerTxt[1]}}
+	{%- else -%}
+		{{ settings.hdTxt-block }}
+	{%- endif -%}
+{%- endcapture -%}
+<div id="header" data-section-id="header" data-section-type="header-section" {% if settings.home_classic and template == "index" %}class="classic-style"{% endif %}>
+		<header class="site-header {{settings.align_logo}}{% if settings.nav_below_logo %} nav-below{% endif %}{% unless settings.main_header_fullwidth %} page-width{% endunless %}">
+			<div class="mobile-nav large-up--hide">
+				<a href="#" class="hdicon js-mobile-nav-toggle open">
+					<svg class="ad ad-bars-l" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+						<path d="M20 3.01348H0V0.851318H20V3.01348Z" fill="#3D4936"/>
+						<path d="M20 10.581H0V8.41889H20V10.581Z" fill="#3D4936"/>
+						<path d="M0 18.1486H20V15.9865H0V18.1486Z" fill="#3D4936"/>
+					  </svg>
+				</a>
+				{% if settings.enable_search %}
+              		<a href="#" class="hdicon searchIco" title="{{ 'general.search.tool_tip' | t }}"><svg class="ad ad-search-l" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3961 11.8537C14.1579 12.2046 13.8855 12.5349 13.5813 12.8391C12.9523 13.4681 12.2056 13.967 11.3838 14.3074C10.562 14.6478 9.68122 14.823 8.79172 14.823C7.90222 14.823 7.02143 14.6478 6.19964 14.3074C5.37785 13.967 4.63115 13.4681 4.00218 12.8391C3.3732 12.2102 2.87428 11.4635 2.53388 10.6417C2.25936 9.97893 2.09228 9.2778 2.03789 8.56468C2.14881 10.0566 2.75196 11.4775 3.76343 12.5981C4.9372 13.8985 6.56943 14.6933 8.317 14.8152C10.0646 14.9372 11.7914 14.3769 13.1344 13.2521L13.5123 12.9356L17.2356 16.652L13.5165 12.933L13.8532 12.5532C14.0503 12.3309 14.2315 12.0972 14.3961 11.8537ZM8.75336 0.215898C10.7841 0.206867 12.7393 0.985489 14.2079 2.38809C15.6764 3.79069 16.5441 5.70802 16.6283 7.73705C16.7056 9.59608 16.1197 11.4162 14.9848 12.8769L20.447 18.3391C20.5515 18.4338 20.6365 18.5481 20.6971 18.6757C20.7608 18.8098 20.796 18.9557 20.8007 19.1042C20.8054 19.2526 20.7793 19.4004 20.7241 19.5383C20.6689 19.6762 20.5859 19.8012 20.4801 19.9055C20.3744 20.0098 20.2482 20.0911 20.1095 20.1443C19.9708 20.1975 19.8227 20.2215 19.6743 20.2147C19.5259 20.2079 19.3806 20.1706 19.2473 20.105C19.1221 20.0433 19.0101 19.958 18.9175 19.8538L13.4375 14.3839C11.9434 15.4829 10.1028 16.0203 8.24196 15.8905C6.21612 15.7491 4.32398 14.8278 2.9633 13.3203C1.60261 11.8128 0.879363 9.83648 0.945583 7.80679C1.0118 5.7771 1.86234 3.85212 3.31839 2.43652C4.77444 1.02091 6.72261 0.224929 8.75336 0.215898ZM8.79172 2.35403C7.28116 2.35403 5.83247 2.95409 4.76434 4.02222C4.23546 4.5511 3.81593 5.17898 3.5297 5.87C3.24347 6.56102 3.09615 7.30165 3.09615 8.0496C3.09615 8.79755 3.24347 9.53818 3.5297 10.2292C3.81593 10.9202 4.23546 11.5481 4.76434 12.077C5.29322 12.6059 5.9211 13.0254 6.61212 13.3116C7.30314 13.5979 8.04377 13.7452 8.79172 13.7452C9.53967 13.7452 10.2803 13.5979 10.9713 13.3116C11.6623 13.0254 12.2902 12.6059 12.8191 12.077C13.8872 11.0089 14.4873 9.56016 14.4873 8.0496C14.4873 6.53904 13.8872 5.09035 12.8191 4.02222C11.751 2.95409 10.3023 2.35403 8.79172 2.35403Z" fill="#3D4936"/>
+</svg></a>
+                {% endif %}
+			</div>
+			{%- if settings.align_logo == "left" -%}{{logo}}{%- endif -%}
+			{%- if settings.nav_below_logo -%}
+				<div class="txtBlock small--hide medium--hide{% if settings.align_logo == "left" %} text-center{% endif %}">{{textblock}}</div>
+			{%- else -%}
+				{{desktopnav}}
+			{%- endif -%}
+			{% if settings.align_logo == "center" %}{{logo}}{% endif %}
+				<div class="icons-col flex">
+                  	{% if settings.enable_search %}
+						<a href="#" class="hdicon searchIco small--hide medium--hide" title="{{ 'general.search.tool_tip' | t }}"><svg class="ad ad-search-l" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3961 11.8537C14.1579 12.2046 13.8855 12.5349 13.5813 12.8391C12.9523 13.4681 12.2056 13.967 11.3838 14.3074C10.562 14.6478 9.68122 14.823 8.79172 14.823C7.90222 14.823 7.02143 14.6478 6.19964 14.3074C5.37785 13.967 4.63115 13.4681 4.00218 12.8391C3.3732 12.2102 2.87428 11.4635 2.53388 10.6417C2.25936 9.97893 2.09228 9.2778 2.03789 8.56468C2.14881 10.0566 2.75196 11.4775 3.76343 12.5981C4.9372 13.8985 6.56943 14.6933 8.317 14.8152C10.0646 14.9372 11.7914 14.3769 13.1344 13.2521L13.5123 12.9356L17.2356 16.652L13.5165 12.933L13.8532 12.5532C14.0503 12.3309 14.2315 12.0972 14.3961 11.8537ZM8.75336 0.215898C10.7841 0.206867 12.7393 0.985489 14.2079 2.38809C15.6764 3.79069 16.5441 5.70802 16.6283 7.73705C16.7056 9.59608 16.1197 11.4162 14.9848 12.8769L20.447 18.3391C20.5515 18.4338 20.6365 18.5481 20.6971 18.6757C20.7608 18.8098 20.796 18.9557 20.8007 19.1042C20.8054 19.2526 20.7793 19.4004 20.7241 19.5383C20.6689 19.6762 20.5859 19.8012 20.4801 19.9055C20.3744 20.0098 20.2482 20.0911 20.1095 20.1443C19.9708 20.1975 19.8227 20.2215 19.6743 20.2147C19.5259 20.2079 19.3806 20.1706 19.2473 20.105C19.1221 20.0433 19.0101 19.958 18.9175 19.8538L13.4375 14.3839C11.9434 15.4829 10.1028 16.0203 8.24196 15.8905C6.21612 15.7491 4.32398 14.8278 2.9633 13.3203C1.60261 11.8128 0.879363 9.83648 0.945583 7.80679C1.0118 5.7771 1.86234 3.85212 3.31839 2.43652C4.77444 1.02091 6.72261 0.224929 8.75336 0.215898ZM8.79172 2.35403C7.28116 2.35403 5.83247 2.95409 4.76434 4.02222C4.23546 4.5511 3.81593 5.17898 3.5297 5.87C3.24347 6.56102 3.09615 7.30165 3.09615 8.0496C3.09615 8.79755 3.24347 9.53818 3.5297 10.2292C3.81593 10.9202 4.23546 11.5481 4.76434 12.077C5.29322 12.6059 5.9211 13.0254 6.61212 13.3116C7.30314 13.5979 8.04377 13.7452 8.79172 13.7452C9.53967 13.7452 10.2803 13.5979 10.9713 13.3116C11.6623 13.0254 12.2902 12.6059 12.8191 12.077C13.8872 11.0089 14.4873 9.56016 14.4873 8.0496C14.4873 6.53904 13.8872 5.09035 12.8191 4.02222C11.751 2.95409 10.3023 2.35403 8.79172 2.35403Z" fill="#3D4936"/>
+</svg></a>
+                  	{% endif %}
+                  
+                    {% unless settings.hide_login %}
+                  	{% if shop.customer_accounts_enabled or settings.show_multiple_currencies or settings.show_language %}
+					<a href="#" class="hdicon site-settings" title="{{ 'layout.header_settingbox.icon_tooltip' | t }}">
+                      	{% if settings.my_account_icn == 'cog' %}
+                      		<i class="ad ad-cog-l"></i>
+                        {% else %}
+							  <svg class="ad ad-user-al" xmlns="http://www.w3.org/2000/svg" width="19" height="21" viewBox="0 0 19 21" fill="none">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M2.25193 13.6803C3.18109 12.7426 4.4413 12.2158 5.75533 12.2158H13.6826C14.9966 12.2158 16.2568 12.7426 17.186 13.6803C18.1151 14.618 18.6371 15.8897 18.6371 17.2158V19.2158C18.6371 19.7681 18.1935 20.2158 17.6462 20.2158C17.099 20.2158 16.6553 19.7681 16.6553 19.2158V17.2158C16.6553 16.4202 16.3421 15.6571 15.7846 15.0945C15.2271 14.5319 14.471 14.2158 13.6826 14.2158H5.75533C4.96691 14.2158 4.21079 14.5319 3.65329 15.0945C3.0958 15.6571 2.7826 16.4202 2.7826 17.2158V19.2158C2.7826 19.7681 2.33895 20.2158 1.79169 20.2158C1.24443 20.2158 0.800781 19.7681 0.800781 19.2158V17.2158C0.800781 15.8897 1.32278 14.618 2.25193 13.6803Z" fill="#3D4936"/>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M9.71896 2.21582C8.07717 2.21582 6.74624 3.55897 6.74624 5.21582C6.74624 6.87267 8.07717 8.21582 9.71896 8.21582C11.3608 8.21582 12.6917 6.87267 12.6917 5.21582C12.6917 3.55897 11.3608 2.21582 9.71896 2.21582ZM4.76442 5.21582C4.76442 2.4544 6.98264 0.21582 9.71896 0.21582C12.4553 0.21582 14.6735 2.4544 14.6735 5.21582C14.6735 7.97724 12.4553 10.2158 9.71896 10.2158C6.98264 10.2158 4.76442 7.97724 4.76442 5.21582Z" fill="#3D4936"/>
+							  </svg>{% endif %}
+                  	</a> 
+                  	{% endif %}
+                    {% render 'customer-links' %}                  
+                  	{% endunless %}
+                  
+					{% if settings.enable_wishlist %}<a href="{{pages[settings.wishlist_page].url}}" class="hdicon wishlist small--hide medium--hide" title="{{ 'products.wishlist.title' | t }}"><i class="ad ad-heart-l"></i><span class="favCount hide">0</span></a>{% endif %}
+					{%- unless settings.catalogmode -%}<a href="{{ routes.cart_url }}" class="hdicon{% if settings.ajax_cart %} header-cart{% endif %}" title="{{ 'layout.cart.title' | t }}">{% if settings.icon_style == "trolly" %}<i class="ad ad-cart-l"></i>{% elsif settings.icon_style == "bag" %}<svg class="ad ad-sq-bag" xmlns="http://www.w3.org/2000/svg" width="19" height="21" viewBox="0 0 19 21" fill="none">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M3.52034 0.579457C3.69046 0.350542 3.95746 0.21582 4.241 0.21582H15.0509C15.3345 0.21582 15.6015 0.350542 15.7716 0.579457L18.4741 4.21582C18.591 4.37318 18.6542 4.56457 18.6542 4.76127V17.4885C18.6542 18.2119 18.3695 18.9056 17.8627 19.417C17.3559 19.9285 16.6685 20.2158 15.9517 20.2158H3.34017C2.62343 20.2158 1.93605 19.9285 1.42923 19.417C0.92242 18.9056 0.637695 18.2119 0.637695 17.4885V4.76127C0.637695 4.56457 0.700913 4.37318 0.817861 4.21582L3.52034 0.579457ZM4.69141 2.034L2.43935 5.06431V17.4885C2.43935 17.7297 2.53426 17.9609 2.70319 18.1314C2.87213 18.3019 3.10126 18.3976 3.34017 18.3976H15.9517C16.1907 18.3976 16.4198 18.3019 16.5887 18.1314C16.7577 17.9609 16.8526 17.7297 16.8526 17.4885V5.0643L14.6005 2.034H4.69141Z" fill="#3D4936"/>
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M0.637695 4.76127C0.637695 4.2592 1.04101 3.85218 1.53852 3.85218H17.7534C18.2509 3.85218 18.6542 4.2592 18.6542 4.76127C18.6542 5.26335 18.2509 5.67037 17.7534 5.67037H1.53852C1.04101 5.67037 0.637695 5.26335 0.637695 4.76127Z" fill="#3D4936"/>
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M6.04265 7.48855C6.54017 7.48855 6.94348 7.89556 6.94348 8.39764C6.94348 9.12096 7.2282 9.81465 7.73502 10.3261C8.24183 10.8376 8.92922 11.1249 9.64596 11.1249C10.3627 11.1249 11.0501 10.8376 11.5569 10.3261C12.0637 9.81465 12.3484 9.12096 12.3484 8.39764C12.3484 7.89556 12.7518 7.48855 13.2493 7.48855C13.7468 7.48855 14.1501 7.89556 14.1501 8.39764C14.1501 9.60317 13.6756 10.7593 12.8309 11.6118C11.9862 12.4642 10.8405 12.9431 9.64596 12.9431C8.45139 12.9431 7.30575 12.4642 6.46106 11.6118C5.61637 10.7593 5.14183 9.60317 5.14183 8.39764C5.14183 7.89556 5.54514 7.48855 6.04265 7.48855Z" fill="#3D4936"/>
+					  </svg>{% else %}<i class="ad ad-basket-l"></i>{% endif %}<span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">{{ cart.item_count }}</span></a>{%- endunless -%}
+					
+				</div>
+		</header>
+		{%- if settings.nav_below_logo -%}{{desktopnav}}{%- endif -%}
+</div>
+<div class="stickySpace"></div>
+{%- if settings.snow_effect -%}</div>{%- endif -%}
+{{mobilenav}}
+{%- endcapture -%}
+{{siteHeader | strip_newlines | remove: "  " | remove: "	" }}
+
+<style>
+.header-txt.middle-hdr.text-center {
+	text-transform: capitalize;
+	font-weight: 500 !important;
+	display: flex;
+	align-items: center;
+	margin-top: 1px;
+	letter-spacing: -0.2px;
+}
+.top-header .social-icons{    margin: 0;}
+.top-header .left-hdr a {
+	padding: 0;
+	margin-right: 20px;
+}
+.top-header .left-hdr .ad {
+	margin-right: 0;
+}
+.site-header {
+    max-width: 1760px;
+}	
+#siteNav>li>a{margin-right: 0;letter-spacing: 0.1px;}
+#siteNav>li>a.active:after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background: #3D4936;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 0;
+}
+#siteNav>li>a {        padding: 0 25px 16px;    font-weight: 700;}
+.header-logo img{        width: 100%;}
+@media screen and (min-width: 1025px) {
+	.header-txt.middle-hdr.text-center {
+		position: absolute;
+		margin: 0 auto;
+		text-align: center;
+		left: 20px;
+		right: 20px;
+		width: fit-content;
+		margin-top: 0;
+	}
+
+	
+}
+@media screen and (max-width: 1366px) {
+#siteNav>li>a {	padding: 0 10px 16px;    font-size: 14px;}
+}
+@media screen and (max-width: 1024px) {
+	.top-header {min-height: 40px;}
+	.site-header .mobile-nav, .site-header .icons-col {        max-width: fit-content;    }
+	.site-header a.hdicon{    padding: 0 10px;}
+	#CartCount, .favCount{right: 2px;}
+
+}
+@media screen and (max-width: 480px) {
+	#CartCount, .favCount {
+        min-width: unset;
+        right: 2px;
+        width: 18px;
+        height: 18px;
+        color: #FFF;
+        text-align: center;
+        font-size: 8px;
+        font-weight: 500;
+        line-height: 10.4px;
+        padding-top: 1px;
+		padding-right: 0.5px;
+    }
+	.site-header a.hdicon{margin-top: -6px !important;}
+	.site-header .icons-col{    margin-right: -5px !important;}
+}
+</style>
