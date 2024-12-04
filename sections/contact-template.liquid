@@ -1,0 +1,478 @@
+<div class="page-width {{section.settings.layout}}">
+
+  {% comment %} contact form {% endcomment %}
+  {% capture contactForm %}
+    <h2 class="page-title">{{ page.title }}</h2>
+    {% if page.content.size > 0 %}{{ page.content }}{% endif %}  
+  	<div class="contact-frm form-vertical {% if section.settings.add_label == true %} add_label{% endif %}">
+        {% if section.settings.contact_title != blank %}<h2 class="h3 text-center">{{ section.settings.contact_title }}</h2>{% endif %}
+        {% if section.settings.contact_text_desc %}<div class="rte text-center">{{ section.settings.contact_text_desc }}</div>{% endif %}
+        {% form 'contact' %}
+        	{% if form.posted_successfully? %}<p class="note form-success">{{ 'contact.form.post_success' | t }}</p>{% endif %}
+
+        	{{ form.errors | default_errors }}
+
+        <div class="grid grid--half-gutters">
+          <div class="grid__item{% if section.settings.layout == "style1" %} medium-up--one-half{% endif %}">
+            <label>{{ 'contact.form.name' | t }}</label>
+           	<input type="text" id="ContactFormName" name="contact[name]" placeholder="{{ 'contact.form.name' | t }}"  value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+          </div>       
+          <div class="grid__item{% if section.settings.layout == "style1" %} medium-up--one-half{% endif %}">
+            <label>Last Name</label>
+           	<input type="text" id="ContactFormName" name="contact[name]" placeholder="Last Name"  value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+          </div>       
+                
+        </div>
+        <div class="grid  {% unless section.settings.show_phone %}grid--half-gutters{% endunless %}">
+          <div class="grid__item{% if section.settings.layout == "style1" %} medium-up--one-half{% endif %}">
+            <label>{{ 'contact.form.email' | t }}*</label>
+            <input type="email" id="ContactFormEmail" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}*"  autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" class="{% if form.errors contains 'email' %}input--error{% endif %}" required>
+          </div>      
+          {% unless section.settings.show_phone %}
+          <div class="grid__item{% if section.settings.layout == "style1" %} medium-up--one-half{% endif %}">
+            <label>{{ 'contact.form.phone' | t }}</label>
+            <input type="tel" id="ContactFormPhone" name="contact[phone]" pattern="[0-9\-]*" placeholder="{{ 'contact.form.phone' | t }}"  value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+          </div>
+          {% endunless %} 
+         
+        </div>
+        {% unless section.settings.show_subject %}
+        <div class="grid__item">
+          <label>{{ 'contact.form.subject' | t }}</label>
+          <input type="text" id="ContactFormSubject" name="contact[subject]" placeholder="{{ 'contact.form.subject' | t }}"  value="{% if form[subject] %}{{ form[subject] }}{% endif %}">
+        </div>
+        {% endunless %}
+        <div class="grid_data">
+          <label>{{ 'contact.form.message' | t }}</label>
+          <textarea rows="10" id="ContactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}" >{% if form.body %}{{ form.body }}{% endif %}</textarea>
+        </div>
+        <button type="submit" class="btn mob-btn-sm btn-md">
+          {{ 'contact.form.submit' | t }}
+          {% if section.settings.custom_arrow %}
+              {% render 'icon-arrow-custom-fff' %}
+          {% endif %}
+      </button>
+      
+        {% endform %}
+      </div>
+  {% endcapture %}
+  
+	{% capture address %}
+		
+      {% if section.settings.show_map %}
+        {% if section.settings.goggle_map %} <div class="map_goggle contact-logo">{{ section.settings.goggle_map }}</div>{% else %} {% if section.settings.logo %}
+          <p class="contact-logo"><img src="{{ section.settings.logo | img_url: '300x' }}" srcset="{{ section.settings.logo | img_url: '300x' }} 1x, {{ section.settings.logo | img_url: '300x', scale: 2 }} 2x" alt="{{ section.settings.logo.alt | default: shop.name }}"></p>
+         {% endif %}	{% endif %}
+      {% else %}
+      {% if section.settings.logo %}
+    		<p class="contact-logo"><img src="{{ section.settings.logo | img_url: '300x' }}" srcset="{{ section.settings.logo | img_url: '300x' }} 1x, {{ section.settings.logo | img_url: '300x', scale: 2 }} 2x" alt="{{ section.settings.logo.alt | default: shop.name }}"></p>
+     	{% endif %}
+    {% endif %}
+      <div class="info_contact">
+          {% if section.settings.cnt_title != blank %}<h5>{{ section.settings.cnt_title }}</h5>{% endif %}
+          {% if section.settings.store_phone != blank or section.settings.store_email != blank %}
+            <ul class="contact-address">
+              {% if section.settings.store_phone != blank %}{% if section.settings.url_call != blank %}<a href="{{ section.settings.url_call }}">
+              {% endif %}<li class="phone">{% if section.settings.phone_img != blank %} <img src="{{ section.settings.phone_img | img_url: 'master' }}">{% endif %}{{section.settings.store_phone }}</li>{% if section.settings.url_call != blank %}</a>{% endif %}{% endif %}
+              {% if section.settings.store_email != blank %} {% if section.settings.url_email != blank %}<a href="{{ section.settings.url_email }}">{% endif %}<li class="email">{% if section.settings.email_img != blank %}<img src="{{ section.settings.email_img | img_url: 'master' }}">{% endif %}{{section.settings.store_email }}</li> {% if section.settings.url_email != blank %}</a>{% endif %}{% endif %}
+            </ul>
+        {% endif %}
+          {% if section.settings.ads_title != blank %}<h5>{{ section.settings.ads_title }}</h5>{% endif %}
+          {% if section.settings.store_address != blank %}
+            <ul class="contact-address">
+              {% if section.settings.store_address != blank %}{% if section.settings.url_address != blank %}<a href="{{ section.settings.url_address }}">
+              {% endif %}<li>{% if section.settings.ads_img != blank %}<img src="{{ section.settings.ads_img | img_url: 'master' }}">{% endif %}{{section.settings.store_address }}</li> {% if section.settings.url_address != blank %}</a>{% endif %}{% endif %}
+            </ul>
+        {% endif %}
+      </div>
+	{% endcapture %}
+  
+  {% comment %} map {% endcomment %}
+  {% capture googlemap %}
+  	{% if section.settings.api_key %}<script>theme.mapKey = {{ section.settings.api_key | json }};</script>{% endif %}
+      <script>
+        theme.strings.addressError = {{ 'sections.map.address_error' | t | json }};
+        theme.strings.addressNoResults = {{ 'sections.map.address_no_results' | t | json }};
+        theme.strings.addressQueryLimit = {{ 'sections.map.address_query_limit_html' | t | json }};
+        theme.strings.authError = {{ 'sections.map.auth_error_html' | t | json }};
+      </script>
+
+      <div class="map-section map" data-section-id="{{ section.id }}" data-section-type="map">
+        <a class="map-section__link" href="https://www.google.ca/maps/place/{{ section.settings.map_address }}" target="_blank" aria-label="{{ section.settings.map_address }}"></a>
+        <div class="map-section__container" id="Map-{{ section.id }}" data-address-setting="{{ section.settings.map_address }}"></div>
+      </div>
+  {% endcapture %}
+  
+  {% if section.settings.layout == "style1" %}
+      <div class="grid">   
+        <div class="grid__item medium-up--two-thirds">{{contactForm}}</div>
+        <div class="grid__item medium-up--one-third">
+          <div class="contact-details">
+            {{address}}
+            {% comment %} {% if section.settings.store_address != blank or section.settings.store_phone != blank or section.settings.store_email != blank %}<hr/>{% endif %} {% endcomment %}
+            {% if section.settings.store_opening_time != blank %}<div class="open-hours">{{ section.settings.store_opening_time }}</div><hr/>{% endif %}
+            {% if section.settings.show_socials %}
+            <div class="follow-us">
+              {% if section.settings.socials_ttl != blank %}<h5>{{ section.settings.socials_ttl }}</h5>{% endif %}
+              {%- include 'social-media' -%}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% if section.settings.show_google_map %}{{googlemap}}{% endif %}
+  {% else %}
+  	<div class="grid">
+      <div class="grid__item medium-up--one-third">{{contactForm}}</div>
+      <div class="grid__item medium-up--two-thirds">
+		<div class="grid">
+      <h2 class="page-title">{{ page.title }}</h2>
+      {% if page.content.size > 0 %}{{ page.content }}{% endif %}    
+        	<div class="grid__item medium-up--three-fifths">
+          		<div class="contact-details">{{address}}</div>
+              	 {% if section.settings.show_socials %}
+                    <div class="follow-us">
+                      {% if section.settings.socials_ttl != blank %}<label> {{ section.settings.socials_ttl }}</label>{% endif %}
+                      {% include 'social-media' %}
+                    </div>
+                 {% endif %}
+        	</div>
+          	{% if section.settings.store_opening_time != blank %}
+            <div class="grid__item medium-up--two-fifths">
+              <div class="open-hours">{{ section.settings.store_opening_time }}</div>			
+            </div>
+            {% endif %}
+        </div>
+      </div>
+      {% if section.settings.show_google_map %}<div class="grid__item medium-up--two-thirds">{{googlemap}}</div>{% endif %}
+  	</div>
+  {% endif %}
+</div>
+
+<style>
+  {% if section.settings.layout == "style1" %}
+  	.contact-details { padding:30px; background:{{section.settings.form_bg}}; color:{{section.settings.form_text}};}
+  {% else %}
+  	.contact-frm { padding:30px; background:{{section.settings.form_bg}}; color:{{section.settings.form_text}};}
+  {% endif %}
+</style>
+
+{% schema %}
+  {
+    "name": "Contact Page",
+	"class":"contact-template",
+    "settings": [
+    	{
+          "type": "select",
+          "id": "layout",
+          "label": "layout Syle",
+          "default": "style1",
+          "options": [
+            {
+              "value": "style1",
+              "label": "Style 1"
+            },
+            {
+              "value": "style2",
+              "label": "style 2"
+            }
+          ]
+        },
+		  {
+          "type": "checkbox",
+          "id": "show_map",
+          "label": "Show goggle map",
+          "default": true
+        },   
+		  {
+          "type": "html",
+          "id": "goggle_map",
+          "label": "Add Goggle map location code"
+        },   
+		  {
+          "type": "checkbox",
+          "id": "add_label",
+          "label": "Show in input filed label",
+          "default": true
+        },   
+        {
+          "type": "checkbox",
+          "id": "custom_arrow",
+          "label": "Add button side arrow",
+          "default":true
+        },    
+		{
+          "type": "checkbox",
+          "id": "show_google_map",
+          "label": "Show Google Map?",
+          "default": true
+        },      
+        {
+          "id": "map_address",
+          "type": "text",
+          "label": "Map address",
+          "info": "Google maps will find the exact location",
+          "default": "80 Spadina Ave, Toronto"
+        },         
+       {
+          "id": "api_key",
+          "type": "text",
+          "label": "Google Maps API key",
+          "info": "You’ll need to [register a Google Maps API Key](https://help.shopify.com/manual/using-themes/troubleshooting/map-section-api-key) to display the map"
+          },
+        {
+          "type": "header",
+          "content": "Contact Form"
+        },
+        {
+          "type": "text",
+          "id": "contact_title",
+          "label": "Title",
+          "default": "Drop Us A Line"
+        },
+        {
+          "type": "textarea",
+          "id": "contact_text_desc",
+          "label": "Text Description"
+        },
+		{
+          "type": "checkbox",
+          "id": "show_phone",
+          "label": "Hide Phone Field?",
+		  "default":false
+        },
+		 {
+          "type": "checkbox",
+          "id": "show_subject",
+           "label": "Hide Subject Field?",
+		  	"default":false
+        },
+       {
+          "type": "header",
+          "content": "Opening Hours"
+       }, 
+       {
+          "type": "textarea",
+          "id": "store_opening_time",
+          "label": "Store Time"      
+       },
+       {
+          "type": "header",
+          "content": "Contact Details"
+       },
+       {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo image"
+       }, 
+       {
+          "type": "text",
+          "id": "cnt_title",
+          "label": "Title Text"
+       },      
+       {
+          "type": "image_picker",
+          "id": "phone_img",
+          "label": "Phone Number side image"
+       }, 
+       {
+          "type": "text",
+          "id": "store_phone",
+          "label": "Phone Number"
+       }, 
+       {
+          "type": "url",
+          "id": "url_call",
+          "label": "Phone Number URL"
+       }, 
+       {
+          "type": "image_picker",
+          "id": "email_img",
+          "label": "Email side image"
+       },
+       {
+          "type": "text",
+          "id": "store_email",
+          "label": "Email"
+       },
+       {
+          "type": "url",
+          "id": "url_email",
+          "label": "Add mail to mail id"
+       },
+       {
+        "type": "text",
+        "id": "ads_title",
+        "label": "Title Text"
+     }, 
+     {
+      "type": "image_picker",
+      "id": "ads_img",
+      "label": "Address side image"
+      }, 
+       {
+        "type": "textarea",
+        "id": "store_address",
+        "label": "Store Address"
+     }, 
+       {
+        "type": "url",
+        "id": "url_address",
+        "label": "Store Address URL"
+     }, 
+
+       {
+		  "type":"checkbox",
+		  "id":"show_socials",
+		  "label":"Show Socials",
+		  "default":true
+	   },
+       {
+		  "type":"text",
+		  "id":"socials_ttl",
+		  "label":"Socials Title",
+		  "default":"Stay Connected"
+	   },
+       {
+		  "type":"header",
+		  "content":"Appearance"
+	   },
+		{
+          "type": "color",
+          "id": "form_bg",
+          "label": "Background Color",
+          "default": "#f8f8f8"
+        },
+	    {
+          "type": "color",
+          "id": "form_text",
+          "label": "Text Color",
+          "default": "#111"
+        }
+	]
+  }
+{% endschema %}
+<style>
+.contact-frm .grid__item input::placeholder,.contact-frm .grid_data textarea::placeholder{opacity:1;}
+.contact-frm .grid__item label,.contact-frm .grid_data label{display:none;}
+.add_label.contact-frm .grid__item input::placeholder,.add_label.contact-frm .grid_data textarea::placeholder{opacity:0;}
+.add_label.contact-frm .grid__item label,.add_label.contact-frm .grid_data label{display:block;font-weight: 500;}
+.contact-frm .note,.contact-frm .form-message {  border: none;  padding: 0;  color: green;}
+.contact-frm .form-message {color:red;}
+.contact-template .page-title {  text-align: left;}
+.contact-details {padding: 0;}
+.contact-details > div {
+  padding: 0 50px;
+}
+.contact-template .contact-logo {
+  margin-bottom: 50px;
+}
+.info_contact h5 {
+  margin-bottom: 10px;
+}
+.contact-template .contact-address {
+  margin-bottom: 30px;
+}
+.contact-template .contact-address li {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  line-height: 160%;
+  max-width: 370px;
+  font-size: 18px !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: 28.8px !important;
+}
+.contact-template .contact-address li:not(:last-child) ,.contact-template .contact-address a:not(:last-child){
+  padding-bottom: 10px;
+}
+
+.contact-template .contact-address a{display:block;}
+.contact-template h5{
+  font-family: "Nunito Sans";
+  font-weight: 700 !important;
+  color:#3D4936;
+  line-height: 130%;
+  margin:0 0 10px;
+}
+.contact-details .follow-us {
+  padding-bottom: 50px;
+}
+.contact-details .social-icons a {
+  padding: 0;
+}
+.contact-template .follow-us li:not(:last-child) {
+  margin-right: 20px;
+}
+.contact-details .social-icons a svg path {
+  fill: #516664;
+}
+.contact-details .social-icons a svg {
+  height: 18px;
+  width: auto;
+}
+.contact-template .contact-logo img {
+  width: 100%;
+}
+.contact-template .form-vertical {
+  padding-right: 0;
+}
+.contact-template .grid--half-gutters > .grid__item {
+  padding: 0 10px;
+}
+.contact-template .grid.grid--half-gutters{margin:0 -10px;}
+.contact-template input,.contact-template textarea, .contact-template select{margin-bottom: 30px;padding: 19.55px 18px;}
+.contact-template label {
+  display: block;
+  margin-bottom: 10px;
+}
+.contact-details .map_goggle {
+  padding: 0;
+  height:357px;
+}
+.contact-details iframe {
+  height: 100%;
+  width: 100%;
+}
+
+.contact-template .grid__item p,.contact-template .grid__item .rte {margin:0;}
+.contact-template .form-vertical {
+  margin-top: 50px;
+}
+.form-vertical textarea {
+  height: 221px;
+}
+.contact-template .grid__item p, .contact-template .grid__item .rte{    text-transform: capitalize;}
+@media only screen and (min-width: 767px) {
+  .contact-template .medium-up--four-sixths, .contact-template .medium-up--two-thirds {
+      width: 62.4%;
+  }
+  .contact-template .medium-up--one-third, .contact-template .medium-up--two-sixths {
+    width: 37.6%;
+}
+.follow-us .list--inline{    padding: 5px 0;}
+.add_label.contact-frm .grid__item label, .add_label.contact-frm .grid_data label,.contact-template .grid__item p, .contact-template .grid__item .rte{letter-spacing: 0.48px;line-height: 26px;}
+}
+@media only screen and (max-width: 1024px) {
+  .contact-details > div {    padding: 0 20px;}
+  .contact-template input, .contact-template textarea, .contact-template select{    padding: 15px 18px;}
+  .form-vertical textarea {    height: 170px;}
+.contact-template .form-vertical {  margin-top: 30px;}
+.contact-template .contact-address li{font-size: 16px !important;  line-height: 26.8px !important;}
+}
+@media only screen and (max-width: 766px) {
+  .contact-template input, .contact-template textarea, .contact-template select {
+    margin-bottom: 20px;
+  }
+  .contact-template .contact-logo {
+    margin-bottom: 30px;
+}
+.contact-details .follow-us {
+  padding-bottom: 30px;
+}
+.contact-template h5{    margin: 0 0 10px 0;    font-size: 18px;}
+.contact-template .contact-address {  margin-bottom: 20px;}
+}
+</style>

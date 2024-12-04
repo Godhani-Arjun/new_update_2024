@@ -1,0 +1,129 @@
+@font-face {
+  font-family: 'Gilda Display';
+  src: url('https://cdn.shopify.com/s/files/1/0816/7168/4372/files/GildaDisplay-Regular.ttf?v=1732094483') format('truetype');
+}
+@font-face {
+  font-family: "Nunito Sans";
+  src: url('https://cdn.shopify.com/s/files/1/0816/7168/4372/files/NunitoSans-Medium.ttf?v=1732103786') format('truetype');
+}
+@font-face {
+  font-family: "Nunito Sans semibold";
+  src: url('https://cdn.shopify.com/s/files/1/0816/7168/4372/files/NunitoSans-SemiBold.ttf?v=1732103786') format('truetype');
+  font-weight: 600;
+}
+body{
+  font-family: "Nunito Sans";
+  font-weight: 500;
+}
+.btn.btn-md {
+  border: none;
+  padding: 18.5px 30.5px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 8px;
+  text-transform: capitalize;
+  font-family: "Nunito Sans";
+  font-weight: 700;
+  transition: all .3s ease-in-out;
+  min-width: 173px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  max-width: fit-content;
+}
+.sec-ttl .h3, .sec-ttl h3,.mega-small-title,h3, .h3,h2,.h2,h5, .h5,.footer-top .h4{
+  font-family: Gilda Display;
+  font-weight: 400 !important;
+  line-height: 130%;
+}
+h5, .h5{
+  line-height: 160%;
+}
+.btn.btn-md .arrow_fff {
+  transition: all .3s ease-in-out;
+}
+.desktop_arrow{display: block;}
+.mobile_arrow{display:none ;}
+h4,.h4{
+  font-family: "Nunito Sans";
+  font-weight: 600;
+}
+.template-index div#carousel .jdgm-carousel-wrapper{padding: 100px 0 0 0;}
+.new_product_slider.grid--uniform .small--five-tenths:nth-child(2n+1), .new_product_slider.grid--uniform .small--four-eighths:nth-child(2n+1), .new_product_slider.grid--uniform .small--one-eighth:nth-child(8n+1), .new_product_slider.grid--uniform .small--one-half:nth-child(2n+1), .new_product_slider.grid--uniform .small--one-quarter:nth-child(4n+1), .new_product_slider.grid--uniform .small--one-seventh:nth-child(7n+1), .new_product_slider.grid--uniform .small--one-sixth:nth-child(6n+1), .new_product_slider.grid--uniform .small--one-third:nth-child(3n+1), .new_product_slider.grid--uniform .small--three-sixths:nth-child(2n+1), .new_product_slider.grid--uniform .small--two-eighths:nth-child(4n+1), .new_product_slider.grid--uniform .small--two-sixths:nth-child(3n+1), .new_product_slider.grid--uniform.small--one-fifth:nth-child(5n+1),.new_product_slider.grid--uniform .grid__item{ clear: none !important;}
+.new_product_slider .slick-list.draggable{    margin: 0;}
+.slick-prev:before, .slick-next:before{  display: none;}
+.slick-slider .slick-prev.slick-arrow,.slick-prev:hover, .slick-prev:focus {
+  background-image: url(https://cdn.shopify.com/s/files/1/0816/7168/4372/files/Previous_8.svg?v=1732774113);
+  background-size: 100% 100%;
+}
+.slick-slider .slick-next.slick-arrow, .slick-next:hover, .slick-next:focus {
+  background-image: url(https://cdn.shopify.com/s/files/1/0816/7168/4372/files/Previous_9.svg?v=1732774113);
+  background-size: 100% 100%;
+}
+.slick-prev, .slick-next{width: 40px;height: 40px;    background-size: 100%;opacity: 1 !important;}
+.awaken_home .slick-dots li button:before{display:none !important;}
+
+.mb-0-pb-0 {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.login-register .flex-item:last-child {
+  margin: 0;
+}
+#addresses .main-content .grid__item > div:last-child,#addresses .main-content .grid__item > div:nth-last-child(2) {
+  margin: 0;
+}
+#addresses .main-content .grid__item > div:last-child{
+  margin-top: 15px;
+}
+@media only screen and (min-width:990px) {
+  #account table,.template-customers\/order table{
+    margin-bottom: 0;
+  }
+}
+@media only screen and (min-width:767px) {
+  body .main-content.customers\/reset_password .medium-up--one-half.grid__item {
+    width: 60% !important;
+  }
+}
+@media only screen and (min-width:1025px) {
+  .btn.btn-md:hover .arrow_fff {
+    rotate: 45deg;
+    transition: all .3s ease-in-out;
+  }
+  .btn.btn-md:hover .arrow_fff path {
+    fill: #3D4936;
+}
+
+}
+
+@media only screen and (max-width:1025px) {
+  .btn.btn-md .arrow_fff {
+    rotate: 45deg;
+  }
+
+.btn:hover::before{display: none;}
+}
+@media only screen and (max-width:766px) {
+  .btn.btn-md {
+    margin: 0 auto;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 23px;
+    padding: 14px 10px;
+    min-width: 157px !important;
+    width: 100%;
+    max-width: fit-content;
+    gap:8px;
+}
+  .desktop_arrow{display: none;}
+  .mobile_arrow{display: block;}
+  .template-index div#carousel .jdgm-carousel-wrapper{padding: 50px 0 0 0;}
+  .slick-prev, .slick-next{width: 30px;height: 30px;}
+  .slick-dots li{    margin: 0 2.5px;}
+  .login-register p,.main-content.customers\/addresses p,.main-content.customers\/account  p,.main-content.customers\/order p,.main-content.customers\/register p,.main-content.customers\/reset_password p{font-size: 14px;}
+}

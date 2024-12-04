@@ -1,0 +1,10 @@
+{%- if settings.breadcrumb_pg -%}{%- render 'breadcrumb' -%}{%- else -%}<div class="topSpace"></div>{%- endif -%}
+<div class="page-width">
+  <h1 class="page-title h2">{{ page.title }}</h1>
+</div>
+{% schema %}
+{
+  "name": "default-page",
+  "settings": []
+}
+{% endschema %}

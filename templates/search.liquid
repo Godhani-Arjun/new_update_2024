@@ -1,0 +1,77 @@
+{%- assign limit = settings.search_rows -%}
+{%- paginate search.results by limit -%}
+<!-- breadcrumb -->
+{% include 'breadcrumb' %}
+
+<div class="page-width">
+    {%- case settings.search_grid -%}
+    	{%- when 2 -%}{%- assign grid_ds = 'large-up--one-half' -%}{%- assign image_size = '150,350,550,750,950' -%}
+        {%- when 3 -%}{%- assign grid_ds = 'large-up--one-third' -%}{%- assign image_size = '150,350,550,750' -%}
+        {%- when 4 -%}{%- assign grid_ds = 'large-up--one-quarter' -%}{%- assign image_size = '150,350,550,750' -%}
+    	{%- when 5 -%}{%- assign grid_ds = 'large-up--one-fifth' -%}{%- assign image_size = '150,350,550' -%}
+        {%- when 6 -%}{%- assign grid_ds = 'large-up--one-sixth' -%}{%- assign image_size = '130,300,500' -%}
+    	{%- when 7 -%}{%- assign grid_ds = 'large-up--one-seventh' -%}{%- assign image_size = '130,280,400' -%}
+    {%- endcase -%}
+    {%- case settings.search_tablet-grid-%}
+      {% when 2 %}{%- assign grid_tb = 'medium--one-half' -%}
+      {% when 3 %}{%- assign grid_tb = 'medium--one-third' -%}
+      {% when 4 %}{%- assign grid_tb = 'medium--one-quarter' -%}
+      {% when 5 %}{%- assign grid_tb = 'medium--one-fifth' -%}
+    {%- endcase -%}
+    {%- case settings.search_mobile-grid -%}
+      {% when 1 %}{%- assign grid_mb = 'small--one-whole' -%}
+      {% when 2 %}{%- assign grid_mb = 'small--one-half' -%}
+      {% when 3 %}{%- assign grid_mb = 'small--one-third' -%}
+    {%- endcase -%}
+	
+{% if search.results_count == 0 or search.performed == false %}
+    <div class="empty-page-content text-center">
+      <h1 class="h2">{{ 'general.search.title' | t }}</h1>
+      {% else %}
+      <div class="section-header text-center">
+        <h1 class="page-title">{{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}</h1>
+        {% endif %}
+
+        {% if search.performed and search.results_count == 0 %}
+        <hr class="hr--small hr--invisible">
+        <p>{{ 'general.search.no_results_html' | t: terms: search.terms }}</p>
+        {% endif %}
+      </div>
+    </div>
+  
+  {%- assign isproducts = false -%}
+  {% for item in search.results %}
+      {% if item.object_type == 'product' %}
+          {%- assign isproducts = true -%}
+      {% endif %}
+  {% endfor %}	
+  
+  {% if search.performed %}
+      {% if isproducts %}
+          <div data-section-id="collection-template" id="collection-template" data-section-type="collection-template">
+              <div class="page-width" id="Collection">
+                  <div class="productList">
+                      <div class="grid grid--uniform grid-products grid--view-items">
+                          {% for item in search.results %}
+                          <div class="grid__item {{ grid_mb }} {{ grid_tb }} {{grid_ds}}">{% include 'product-card-grid', sizes: image_size  , product: item %}</div>
+                          {% endfor %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+      {% else %}
+          <div class="page-width list-view-items">
+          {% for item in search.results %}
+              <div class="grid__item medium-up--one-third">{% include 'blog-card-grid', article: item %}</div>
+          {% endfor %}
+          </div>
+      {% endif %}
+    </div>
+
+    {% if paginate.pages > 1 %}
+      {%- include 'pagination' -%}
+    {% endif %}
+
+{% endif %}
+
+{%- endpaginate -%}
