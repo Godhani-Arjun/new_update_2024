@@ -554,7 +554,8 @@
           "top_footer_kydKRH": {
             "type": "top_footer",
             "settings": {
-              "iconsize": "120",
+              "top_block_img": "shopify://shop_images/breakfast-from-above.jpg",
+              "iconsize": "40",
               "title_top": "Online Support",
               "description_top": "<p>Support Online 24/7 On Day</p>",
               "link_title": ""
