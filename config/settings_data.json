@@ -545,7 +545,7 @@
           "top_footer_pEHiTE": {
             "type": "top_footer",
             "settings": {
-              "iconsize": "120",
+              "iconsize": "40",
               "title_top": "Secure Payment",
               "description_top": "<p>Your Payment is Safe With Us</p>",
               "link_title": ""
